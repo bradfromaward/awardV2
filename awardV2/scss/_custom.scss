@@ -1,6 +1,7 @@
 .fullwidth {
-    margin-left: -15px;
-    margin-right: -15px;
+    //margin-left: -15px;
+    //margin-right: -15px;
+    padding: 0;
 }
 
 .bg-accent{
@@ -9,4 +10,23 @@
 
 .text-accent{
     color: $accent;
+}
+
+.meganav-block {
+    position: absolute;
+    left: 33%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    overflow-y:hidden;
+
+    & > ul:first-child {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+
+.active-block {
+    display: block;
 }

@@ -169,3 +169,29 @@ $('.multi-add').on('click', function(){
         return false; 
     }
 });
+
+$(document).ready(function() {
+    $(".meganav-level-1").click(function() {
+
+        var desiredContent = $(this).children('div.meganav-block');
+
+        //var content3 = $(this).children('div.meganav-block').find("a").attr("href");
+
+        $(".meganav-block").each(function(index) {
+
+			var content2 = $(this);
+
+			if (!content2.is(desiredContent)) {
+				//content2.slideUp();
+				content2.removeClass('active-block');
+			} 
+			else {
+				//window.open(content3, "_self");
+				desiredContent.addClass('active-block');
+			}
+        });
+
+        //content.slideToggle();
+        //content.toggleClass('active-block');
+    });
+});

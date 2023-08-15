@@ -9,7 +9,7 @@
 </head>
 <body id="n_[@config:current_page_type@]" class="n_[@CONFIG:TEMPLATELANG@]">
 <a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
-<header class="container-fluid wrapper-header pb-3" aria-label="Header container">
+<header class="container-fluid wrapper-header fullwidth" aria-label="Header container">
 	
 	<div class="bg-primary row pb-2 pt-3 align-items-center">
 
@@ -62,7 +62,7 @@
 
 	</div>
 	<!-- NavBar -->
-	<nav class="navbar navbar-expand-md navbar-light bg-accent fullwidth">
+	<nav class="navbar navbar-expand-md navbar-light bg-accent">
 
 		<div class="collapse navbar-collapse" id="navbarMainMenu">
 			
@@ -145,9 +145,41 @@
 
 	</nav>
 
-	<div class="">
-
-	</div>
+	<ul class="bg-primary list-unstyled" style="position: relative;">
+		[%menu id:'sidebar_menu'%]
+			[%param *level_1%]
+				<li class="meganav-level-1">
+					<span class="text-dark">
+						[@name@]
+					</span>
+					[%if [@next_level@]%]
+					<div class="meganav-block bg-accent">
+						<ul class="list-unstyled">
+							[@next_level@]
+						</ul>
+					</div>
+					[%/if%]
+				</li>
+				[%/param%]
+			[%param *level_2%]
+				<li class=""> 
+					<span class="text-dark">
+						[@name@]
+					</span>
+					[%if [@next_level@]%]
+						<ul class="list-unstyled">
+							[@next_level@]
+						</ul>
+					[%/if%]
+				</li>
+				[%/param%]
+			[%param *level_3%]
+				<li class="">
+					<a class="text-dark" href="[@url@]">[@name@]</a>
+				</li>
+			[%/param%]
+		[%/menu%]
+	</ul>
 
 </header>
 <div id="main-content" class="container" role="main">
