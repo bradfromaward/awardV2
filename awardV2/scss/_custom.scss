@@ -12,6 +12,51 @@
     color: $accent;
 }
 
+// Mega Navigation Styles
+
+.meganav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 30;
+}
+
+li.meganav-toggle {
+    background-color: $primary;
+    padding: 0 2rem;
+    border-radius: 5px;
+}
+
+a.meganav-toggle {
+    color: $white !important;
+}
+
+.meganav-title {
+    font-size: 1.3rem;
+}
+
+.meganav-level-1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all ease-in-out 100ms;
+
+    &:hover {
+        cursor: pointer;
+        margin-left: 0.1rem;
+        color: $primary;
+    }
+}
+
+.meganav-level-2 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.meganav-level-3 {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
 .meganav-block {
     position: absolute;
     left: 33%;

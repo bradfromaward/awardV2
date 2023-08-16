@@ -11,14 +11,15 @@
 <a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
 <header class="container-fluid wrapper-header fullwidth" aria-label="Header container">
 	
-	<div class="bg-primary row pb-2 pt-3 align-items-center">
+	<div class="bg-secondary row px-3 py-1 align-items-center">
 
 		<div class="col wrapper-logo">
 			<a href="[@config:home_url@]" title="[@config:company_name@]">
-				<img class="logo" style="height: 70px;" src="[@config:imageurl@]/website_logo.png?[@config:neto_css_version@]" alt="[@config:company_name@] logo"/>
+				<img class="logo" style="height: 60px;" src="[@config:imageurl@]/website_logo.png?[@config:neto_css_version@]" alt="[@config:company_name@] logo"/>
 			</a>
 		</div>
 
+		<!-- Mobile Cart -->
 		<div class="col d-block d-md-none text-right">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false" aria-label="Toggle navigation">
 				<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
@@ -43,6 +44,7 @@
 			</div>
 		</div>
 
+		<!-- Desktop Cart -->
 		<div class="d-none d-md-block col text-right">
 			<div id="header-cart" class="btn-group" role="group">
 				<a href="[%url page:'checkout' type:'cart'/%]" class="btn btn-outline-secondary" id="cartcontentsheader">
@@ -81,13 +83,10 @@
 			[%cache type:'menu' id:'header-content-menu' ttl:'86400'%]
 				[%menu id:'awardV2'%]
 					[%param *level_1%]
-						<li class="nav-item [%if [@next_level@]%] dropdown [%/if%] [%if [@css_class@]%] [@css_class@][%/if%]">
-							<a href="[@url@]" class="nav-link [%if [@next_level@]%] dropdown-toggle[%/if%]" [%if [@next_level@]%]role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"[%/if%]>[@name@]</a>
-							[%if [@next_level@]%]
-								<ul class="dropdown-menu">
-									[@next_level@]
-								</ul>
-							[%/if%]
+						<li class="nav-item [%if [@css_class@]%] [@css_class@][%/if%]">
+							<a href="[@url@]" class="nav-link [%if [@css_class@]%] [@css_class@][%/if%]" data-toggle="collapse" href="#collapseMeganav"  aria-expanded="true">[@name@]</a>
+
+							<!-- Removed Level 2 -->
 						</li>
 						[%/param%]
 					[%param *level_2%]
@@ -145,18 +144,16 @@
 
 	</nav>
 
-	<ul class="bg-primary list-unstyled" style="position: relative;">
-		<h3 class="bg-secondary p-3 text-white">Shop All</h3>
+	<ul class="meganav collapse pb-5 bg-secondary list-unstyled" id="collapseMeganav">
+		<h3 class="bg-primary p-3"> <a class="text-white" href="https://www.awardrv.com.au/products/">Shop All</a></h3>
 		[%menu id:'sidebar_menu'%]
 			[%param *level_1%]
-				<li class="meganav-level-1">
-					<span class="text-dark">
-						[@name@]
-					</span>
+				<li class="meganav-level-1 pl-3 mb-1">
+					[@name@]
 					[%if [@next_level@]%]
 					<div class="meganav-block bg-accent">
-						<h3 class="bg-secondary p-3 text-white">View All</h3>
-						<ul class="megagrid list-unstyled">
+						<h3 class="bg-primary p-3"> <a class="text-white" href="[@url@]">View All [@name@]</a></h3>
+						<ul class="megagrid p-3 list-unstyled">
 							[@next_level@]
 						</ul>
 					</div>
@@ -164,7 +161,7 @@
 				</li>
 				[%/param%]
 			[%param *level_2%]
-				<li class=""> 
+				<li class="meganav-level-2 pb-1"> 
 					<a class="text-dark" href="[@url@]">[@name@]</a>
 					[%if [@next_level@]%]
 						<ul class="list-unstyled">
@@ -174,8 +171,8 @@
 				</li>
 				[%/param%]
 			[%param *level_3%]
-				<li class="">
-					<a class="text-dark pl-1" href="[@url@]"><small>[@name@]</small></a>
+				<li class="meganav-level-3">
+					<a class="text-dark" href="[@url@]">[@name@]</a>
 				</li>
 			[%/param%]
 		[%/menu%]
