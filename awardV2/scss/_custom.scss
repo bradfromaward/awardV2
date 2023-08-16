@@ -19,9 +19,9 @@
     right: 0;
     bottom: 0;
     display: none;
-    overflow-y:hidden;
+    overflow-y: hidden;
 
-    & > ul:first-child {
+    .megagrid {
         display: grid;
         grid-template-columns: auto auto;
     }

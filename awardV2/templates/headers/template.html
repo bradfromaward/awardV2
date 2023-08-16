@@ -146,6 +146,7 @@
 	</nav>
 
 	<ul class="bg-primary list-unstyled" style="position: relative;">
+		<h3 class="bg-secondary p-3 text-white">Shop All</h3>
 		[%menu id:'sidebar_menu'%]
 			[%param *level_1%]
 				<li class="meganav-level-1">
@@ -154,7 +155,8 @@
 					</span>
 					[%if [@next_level@]%]
 					<div class="meganav-block bg-accent">
-						<ul class="list-unstyled">
+						<h3 class="bg-secondary p-3 text-white">View All</h3>
+						<ul class="megagrid list-unstyled">
 							[@next_level@]
 						</ul>
 					</div>
@@ -163,9 +165,7 @@
 				[%/param%]
 			[%param *level_2%]
 				<li class=""> 
-					<span class="text-dark">
-						[@name@]
-					</span>
+					<a class="text-dark" href="[@url@]">[@name@]</a>
 					[%if [@next_level@]%]
 						<ul class="list-unstyled">
 							[@next_level@]
@@ -175,7 +175,7 @@
 				[%/param%]
 			[%param *level_3%]
 				<li class="">
-					<a class="text-dark" href="[@url@]">[@name@]</a>
+					<a class="text-dark pl-1" href="[@url@]"><small>[@name@]</small></a>
 				</li>
 			[%/param%]
 		[%/menu%]
