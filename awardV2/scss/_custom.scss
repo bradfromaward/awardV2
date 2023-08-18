@@ -24,6 +24,22 @@
     }
 }
 
+// Custom Nav
+
+.awardnav {
+    // Add Query for desktop nav
+    @media screen and (max-width: 768px) {
+        position: absolute;
+        z-index: 29;
+        left: 0;
+        right: 0;
+    }
+
+    div {
+        position: relative;
+    }
+}
+
 // Mega Navigation Styles
 
 .meganav {
@@ -81,6 +97,10 @@ a.meganav-toggle {
     bottom: 0;
     display: none;
     overflow-y: hidden;
+
+    @media screen and (max-width: 768px) {
+        left: 0;
+    }
 
     .megagrid {
         display: grid;

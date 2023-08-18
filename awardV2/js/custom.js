@@ -171,9 +171,9 @@ $('.multi-add').on('click', function(){
 });
 
 $(document).ready(function() {
-    $(".meganav-level-1").click(function() {
+    $(".meganav-block-toggle").click(function() {
 
-        var desiredContent = $(this).children('div.meganav-block');
+        var desiredContent = $(this).nextUntil('meganav-block');
 
         //var content3 = $(this).children('div.meganav-block').find("a").attr("href");
 

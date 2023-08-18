@@ -93,11 +93,11 @@
 
 	</div>
 	<!-- NavBar -->
-	<nav class="navbar navbar-expand-md navbar-light bg-accent">
+	<nav class="navbar navbar-expand-md navbar-light bg-accent awardnav">
 
 		<div class="collapse navbar-collapse" id="navbarMainMenu">
 			
-		<!-- Mobile Search --> 
+		<!-- Mobile Search 
 		<form class="d-block d-md-none" name="productsearch" method="get" action="/" role="search" aria-label="Product search">
 			<input type="hidden" name="rf" value="kw"/>
 			<div class="input-group">
@@ -107,6 +107,7 @@
 				</div>
 			</div>
 		</form>
+		--> 
 
 		<ul class="navbar-nav mr-auto" role="navigation" aria-label="Main menu">
 			[%cache type:'menu' id:'header-content-menu' ttl:'86400'%]
@@ -154,14 +155,20 @@
 	</nav>
 
 	<ul class="meganav collapse pb-5 bg-secondary list-unstyled" id="collapseMeganav">
-		<h3 class="bg-primary p-3"> <a class="text-white" href="https://www.awardrv.com.au/products/">Shop All</a></h3>
+		<h3 class="bg-primary p-3"> 
+			<i class="fa fa-times fa-lg text-white mr-3" data-toggle="collapse" href="#collapseMeganav"></i> 
+			<a class="text-white" href="https://www.awardrv.com.au/products/">Shop All</a>
+		</h3>
 		[%menu id:'sidebar_menu'%]
 			[%param *level_1%]
 				<li class="meganav-level-1 pl-3 mb-1">
-					[@name@]
+					<div class="meganav-block-toggle"> [@name@] </div>
 					[%if [@next_level@]%]
 					<div class="meganav-block bg-accent">
-						<h3 class="bg-primary p-3"> <a class="text-white" href="[@url@]">View All [@name@]</a></h3>
+						<h3 class="bg-primary p-3">
+							<i class="fa fa-arrow-left fa-lg text-white mr-3 meganav-block-toggle"></i> 
+							<a class="text-white" href="[@url@]">View All [@name@]</a>
+						</h3>
 						<ul class="megagrid p-3 list-unstyled">
 							[@next_level@]
 						</ul>
