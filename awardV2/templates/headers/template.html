@@ -11,15 +11,21 @@
 <a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
 <header class="container-fluid wrapper-header fullwidth" aria-label="Header container">
 	
-	<div class="bg-secondary row px-3 py-1 align-items-center">
+	<div class="bg-secondary row m-0 py-1 align-items-center">
 
-		<div class="col wrapper-logo">
+		<div class="d-none d-md-block col wrapper-logo">
 			<a href="[@config:home_url@]" title="[@config:company_name@]">
 				<img class="logo" style="height: 60px;" src="[@config:imageurl@]/website_logo_awardV2.webp" alt="[@config:company_name@] logo"/>
 			</a>
 		</div>
 
-		<!-- Mobile Cart Depreciated -->
+		<div class="d-block d-md-none col wrapper-logo">
+			<a href="[@config:home_url@]" title="[@config:company_name@]">
+				<img class="logo" style="height: 60px;" src="[@config:imageurl@]/website_logo_awardV2_badge.webp" alt="[@config:company_name@] logo"/>
+			</a>
+		</div>
+
+		<!-- Mobile Cart Depreciated 
 		<div class="col d-none text-right">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false" aria-label="Toggle navigation">
 				<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
@@ -29,6 +35,7 @@
 				<span class="badge badge-pill badge-secondary" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span>
 			</a>
 		</div>
+		-->
 
 		<div class="d-none d-md-block col">
 			<div class="header-search pt-2 pt-md-0">
