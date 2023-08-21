@@ -185,11 +185,11 @@
 					</div>
 					[%if [@next_level@]%]
 					<div class="meganav-block bg-accent">
-						<h3 class="bg-primary p-3">
+						<h3 class="bg-primary p-3 m-0">
 							<i class="fa fa-arrow-left fa-lg text-white mr-3 meganav-block-toggle"></i> 
 							<a class="text-white" href="[@url@]">View All [@name@]</a>
 						</h3>
-						<ul class="megagrid p-3 list-unstyled">
+						<ul class="megagrid px-4 py-3 list-unstyled">
 							[@next_level@]
 						</ul>
 					</div>
@@ -197,7 +197,7 @@
 				</li>
 				[%/param%]
 			[%param *level_2%]
-				<li class="meganav-level-2 pb-1"> 
+				<li class="meganav-level-2"> 
 					<a class="text-dark" href="[@url@]">[@name@]</a>
 					[%if [@next_level@]%]
 						<ul class="list-unstyled">

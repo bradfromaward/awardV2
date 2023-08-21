@@ -108,13 +108,32 @@ a.meganav-toggle {
 }
 
 .meganav-level-2 {
-    font-size: 1rem;
-    font-weight: 600;
+    width: 29%;
+    height: max-content;
+    margin-bottom: 32px;
+
+    a {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    @media screen and (max-width: 1200px) {
+        width: 43%;
+        margin-bottom: 16px;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 8px;
+    }
 }
 
 .meganav-level-3 {
-    font-size: 0.8rem;
-    font-weight: 400;
+
+    a {
+        font-size: 1rem;
+        font-weight: 400;
+    }
 }
 
 .meganav-block {
@@ -128,11 +147,17 @@ a.meganav-toggle {
 
     @media screen and (max-width: 768px) {
         left: 0;
+
+        h3 a {
+            font-size: 1.15rem;
+        }
     }
 
     .megagrid {
-        display: grid;
-        grid-template-columns: auto auto;
+        height: 100%;
+        transition: none;
+        //display: grid;
+        //grid-template-columns: auto auto;
     }
 }
 

@@ -174,6 +174,7 @@ $(document).ready(function() {
     $(".meganav-block-toggle").click(function() {
 
         var desiredContent = $(this).nextUntil('meganav-block');
+		
 
         //var content3 = $(this).children('div.meganav-block').find("a").attr("href");
 
@@ -191,7 +192,21 @@ $(document).ready(function() {
 			}
         });
 
+		$('.megagrid').masonry('layout');
+
         //content.slideToggle();
         //content.toggleClass('active-block');
     });
+});
+
+$(document).ready(function() {
+	$('.megagrid').masonry({
+		// options
+		itemSelector: '.meganav-level-2',
+		columnWidth: '.meganav-level-2',
+		percentPosition: true,
+		gutter: 32,
+		transitionDuration: 0
+
+	});
 });
