@@ -143,6 +143,9 @@
 			</div>
 		</div>
 	[%/IF%]
+
+	<!-- Sub Categories -->
+
 	[%cache type:'cmenu' id:'sidebar_menu'%]
     [%menu id:'sidebar_menu'%]
 		[%param header%]
@@ -175,6 +178,9 @@
 		[%/param%]
 	[%/CATEGORYMENU%]
 	[%/cache%]
+
+	<!-- View History -->
+
 	[%CONFIG id:'phistory_limit' if:'ne' value:'0'%]
 		[%PRODUCT_HISTORY limit:'[@config:phistory_limit@]' template:'box'%]
 			[%param header%]
@@ -188,6 +194,8 @@
 			[%/param%]
 		[%/PRODUCT_HISTORY%]
 	[%/CONFIG%]
+
+	<!-- Web Info Links -->
 	[%cache type:'menu' id:'sidebar-info' ttl:'86400'%]
 	[%MENU id:'web_information'%]
 		[%param header%]
@@ -220,5 +228,6 @@
 		[%/param%]
 	[%/MENU%]
 	[%/cache%]
+	
 </aside>
 <div class="col-12 col-md-9">
