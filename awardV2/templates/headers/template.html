@@ -102,6 +102,11 @@
 	<!-- NavBar -->
 	<nav class="navbar navbar-expand-md navbar-light bg-accent awardnav">
 
+		<div class="d-flex d-md-none m-2 nav-item meganav-toggle" type="button" data-toggle="collapse" data-target="#collapseMeganav">
+			<i class="fa fa-bars fa-md text-white" aria-hidden="true"></i>
+			<a href="#collapseMeganav" class="nav-link meganav-toggle" data-toggle="collapse" href="#collapseMeganav"  aria-expanded="true">Shop All</a>
+		</div>
+
 		<div class="collapse navbar-collapse" id="navbarMainMenu">
 			
 		<!-- Mobile Search 
@@ -117,15 +122,17 @@
 		--> 
 
 		<ul class="navbar-nav mr-auto" role="navigation" aria-label="Main menu">
+
+			<li class="d-none d-md-flex nav-item meganav-toggle" type="button" data-toggle="collapse" data-target="#collapseMeganav">
+				<i class="fa fa-bars fa-md text-white" aria-hidden="true"></i>
+				<a href="#collapseMeganav" class="nav-link meganav-toggle" data-toggle="collapse" href="#collapseMeganav"  aria-expanded="true">Shop All</a>
+			</li>
+
 			[%cache type:'menu' id:'header-content-menu' ttl:'86400'%]
 				[%menu id:'awardV2'%]
 					[%param *level_1%]
 						<li class="nav-item [%if [@css_class@]%] [@css_class@][%/if%]">
-							[%if [@css_class@]%]
-								<i class="fa fa-bars fa-md text-white" aria-hidden="true"></i>
-							[%/if%]
 							<a href="[@url@]" class="nav-link [%if [@css_class@]%] [@css_class@][%/if%]" data-toggle="collapse" href="#collapseMeganav"  aria-expanded="true">[@name@]</a>
-
 							<!-- Removed Level 2 -->
 						</li>
 						[%/param%]
