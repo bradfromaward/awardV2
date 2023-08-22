@@ -9,7 +9,7 @@
 </head>
 <body id="n_[@config:current_page_type@]" class="n_[@CONFIG:TEMPLATELANG@]">
 <a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
-<header class="container-fluid wrapper-header fullwidth" aria-label="Header container">
+<header class="container-fluid wrapper-header fullwidth mb-3" aria-label="Header container">
 	
 	<div class="bg-secondary row m-0 py-1 align-items-center">
 
@@ -98,14 +98,14 @@
 
 		</div>
 
-	</div>
-	<!-- NavBar -->
-	<nav class="navbar navbar-expand-md navbar-light bg-accent awardnav">
-
 		<div class="d-flex d-md-none m-2 nav-item meganav-toggle" type="button" data-toggle="collapse" data-target="#collapseMeganav">
 			<i class="fa fa-bars fa-md text-white" aria-hidden="true"></i>
 			<a href="#collapseMeganav" class="nav-link meganav-toggle" data-toggle="collapse" href="#collapseMeganav"  aria-expanded="true">Shop All</a>
 		</div>
+
+	</div>
+	<!-- NavBar -->
+	<nav class="navbar navbar-expand-md navbar-light bg-accent awardnav">
 
 		<div class="collapse navbar-collapse" id="navbarMainMenu">
 			
@@ -185,7 +185,7 @@
 		</div>
 		[%menu id:'sidebar_menu'%]
 			[%param *level_1%]
-				<li class="meganav-section pl-3 py-2">
+				<li class="meganav-section px-3 py-2">
 					<div class="meganav-level-1 meganav-block-toggle">
 						<span class=""> [@name@] </span> 
 						<i class="fa fa-chevron-right"></i>
@@ -223,4 +223,4 @@
 
 </header>
 <div id="main-content" class="container" role="main">
-	<div class="row">
+	<div class="row no-gutters">
