@@ -210,3 +210,19 @@ $(document).ready(function() {
 
 	});
 });
+
+function equalizeProductHeights() {
+    var maxHeight = 0;
+    $(".product-clamp-height").each(function() {
+        if ($(this).height() > maxHeight) {
+            maxHeight = $(this).height();
+        }
+    });
+
+	$(".product-clamp-height").each(function() {
+        $(this).height(maxHeight + "px") 
+    });
+}
+
+$(document).ready(equalizeProductHeights);
+$(window).resize(equalizeProductHeights);  // To handle window resizing

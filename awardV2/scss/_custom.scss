@@ -175,3 +175,57 @@ a.meganav-toggle {
 .active-block {
     display: block;
 }
+
+// Product Listings
+
+.price-listing {
+    text-align: end;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.price-listing-rrp {
+    text-align: end;
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    p {
+        display: flex;
+        font-size: 70%;
+        flex-direction: column;
+        padding: 0.2rem 0.5rem;
+        background-color: red;
+        margin: 0;
+        color: white;
+        border-radius: 5px;
+
+        .price-listing-rrp-cross {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+// Listing Cont' Savings Overlay
+
+.savings-award-badge {
+    width: 7rem;
+    height: 7rem;
+    background-color: red;
+    border: 0.4rem solid white;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+
+    &.small {
+        width: 5rem;
+        height: 5rem;
+    }
+}
