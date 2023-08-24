@@ -18,6 +18,8 @@ $container-max-widths: (
   xl: 1430px
 );
 
+$grid-gutter-width: 16px;
+
 // Color system
 //
 $white:    #fff;
@@ -46,6 +48,8 @@ $cyan:    #17a2b8;
 $primary:       #1b7e44;
 $secondary:     #ffee00; //Not default B4
 $accent:        #FFD600;
+$sale:        #ec0a0a;
+$special:        #ec700a;
 $success:       $green;
 $info:          $cyan;
 $warning:       $yellow;

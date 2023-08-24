@@ -199,7 +199,7 @@ a.meganav-toggle {
         font-size: 70%;
         flex-direction: column;
         padding: 0.2rem 0.5rem;
-        background-color: red;
+        background-color: $special;
         margin: 0;
         color: white;
         border-radius: 5px;
@@ -210,12 +210,18 @@ a.meganav-toggle {
     }
 }
 
+.award-addtocart {
+    padding-top: 0.7rem;
+    padding-bottom: 0.75rem;
+    font-weight: 500;
+}
+
 // Listing Cont' Savings Overlay
 
 .savings-award-badge {
     width: 7rem;
     height: 7rem;
-    background-color: red;
+    background-color: $sale;
     border: 0.4rem solid white;
     border-radius: 5rem;
     display: flex;
