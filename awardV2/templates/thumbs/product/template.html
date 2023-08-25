@@ -57,7 +57,7 @@
 				[%elseif [@store_quantity@] > 0 AND ![@preorder@] %]
 					<button type="button" title="Add [%escape%][@model@][%/escape%] to Cart" class="addtocart btn-primary btn btn-block btn-loads award-addtocart" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>"><i class="fa fa-shopping-cart mr-1"></i> Add to Cart</button>
 				[%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
-					<button type="button" title="Add [%escape%][@model@][%/escape%] to Cart" class="addtocart btn-primary btn btn-block btn-loads award-addtocart" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Backorder</button>
+					<button type="button" title="Add [%escape%][@model@][%/escape%] to Cart" class="addtocart btn-secondary btn btn-block btn-loads award-addtocart" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Backorder</button>
 				[%else%]
 					<a class="notify_popup btn btn-outline-secondary btn-block btn-loads award-addtocart" href="[@url@]" title="Notify Me When [%escape%][@model@][%/escape%] Is Back In Stock" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Out Of Stock</a>
 				[%/if%]
@@ -68,7 +68,11 @@
 		<div class="savings-container">
 			[%if [@inpromo@]%]
 				<div class="savings-award-badge">
-					<span>On Sale</span>
+					[%if [@promo_id@] eq 'Clearance'%]
+						<span>Clearance</span>
+					[%else%]
+						<span>On Sale</span>
+					[%/if%]
 					<span class="font-weight-bold">[%format type:'percent'%][@save@][%/format%] OFF</span>
 				</div>
 			[%/if%]

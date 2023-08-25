@@ -1,4 +1,5 @@
-[%load_template file:'cms/includes/sidebar.template.html'/%]
+<!-- The sidebar include happend here -->
+<div> 
 [%breadcrumb%]
 	[%param *header%]
 		<nav aria-label="breadcrumb">
@@ -52,7 +53,8 @@
 		<hr aria-hidden="true" />
 	[%/param%]
 [%/advert%]
-[%advert type:'product' limit:'8' template:'' ad_group:''%]
+
+[%advert type:'product' limit:'32' template:'' ad_group:''%]
 	[%param *header%]
 		<section class="row products-row" aria-label="Featured products">
 	[%/param%]
@@ -61,6 +63,7 @@
 		<hr aria-hidden="true"/>
 	[%/param%]
 [%/advert%]
+
 [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
 	<section class="n-responsive-content" aria-label="Short description">
 		[@content_short_description1@]
