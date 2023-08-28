@@ -1,6 +1,6 @@
 <hr/>
 <section class="card" id="shipbox" role="contentinfo" aria-label="Calculate shipping">
-	<div class="card-header"><h3 class="mb-0">Calculate Shipping</h3></div>
+	<div class="card-header"><h5 class="mb-0">Calculate Shipping</h5></div>
 	<div class="card-body">
 		<div class="row btn-stack">
 			[%if [@config:shipping_calculator_type@] eq 'suburb_selector'%]
@@ -72,10 +72,11 @@
 					</button>
 				</div>
 			[%else%]
-				<!-- postcode search -->
+				<!-- postcode search 
 				<div class="col-12 col-md-3">
 					<input type="number" id="n_qty" name="n_qty" value="[@qty@]" min="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%/ data%][%data id:'min_qty' if:'eq' value:'0' %]1[%/ data%]" class="form-control" placeholder="Qty" aria-label="qty">
 				</div>
+
 				<div class="col-12 col-md-3">
 					<select id="ship_country" class="form-control" aria-label="Country">
 						[%countries%]
@@ -85,12 +86,17 @@
 						[%/ countries%]
 					</select>
 				</div>
-				<div class="col-12 col-md-3">
+
+				-->
+
+				<div class="col-12 col-md-7">
 					<input type="text" id="ship_zip" name="ship_zip" value="[@ship_zip@]" size="5" class="form-control" placeholder="Post Code" aria-label="Post code">
 				</div>
-				<div class="col-12 col-md-3">
+
+
+				<div class="col-12 col-md-5">
 					<button type="button" class="btn btn-block btn-primary btn-loads" data-loading-text="<i class='fa fa-sync fa-spin' style='font-size: 14px'></i>" title="Calculate" 
-						onClick="$.load_ajax_template('_buying_options', {'showloading': '1', 'sku': '[@sku@]', 'qty': $('#n_qty').val(), 'ship_zip': $('#ship_zip').val(), 'ship_country': $('#ship_country').val()});">
+						onClick="$.load_ajax_template('_buying_options', {'showloading': '1', 'sku': '[@sku@]', 'qty': $('1').val(), 'ship_zip': $('#ship_zip').val(), 'ship_country': $('AU').val()});">
 						<i class="fa fa-sync" aria-hidden="true"></i> Calculate
 					</button>
 				</div>
@@ -98,7 +104,7 @@
 		</div>
 		[%shipping_methods sortby:'delivery_time' sku:'[@sku@]' qty:'[@qty@]' zip:'[@ship_zip@]' city:'[@ship_city@]' state:'[@ship_state@]' country:'[@ship_country@]'%]
 			[%param *header%]
-				<br />
+				<!-- <br /> -->
 				<div role="alert" aria-atomic="true" aria-label="Shipping results">
 			[%/ param%]
 			[%param *body%]

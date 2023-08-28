@@ -51,16 +51,16 @@
 				
 					<!-- Discount and Freebies -->
 					<div class="row mt-4">
-						[%discount_products id:'[@SKU@]' template:'' show_all:'1' limit:'100'%]
+						[%discount_products id:'[@SKU@]'  show_all:'1' limit:'100'%]
 							[%param header%]
 								<!-- Discount products -->
 								<div class="col-12">
-									<div class="alert alert-success">
-										<h3 class="h2">BONUS ITEMS! <small>Buy [@name@] &amp; receive these for free!</small></h3>
+									<div class="alert alert-success p-3">
+										<h5 class="h2 font-weight-bolder">BONUS ITEMS! <small>Buy [@name@] &amp; receive these for free!</small></h5>
 										<div class="row products-row">
 							[%/param%]
 							[%param *body%]
-											<div class="col-8 col-sm-6 col-md-3">
+											<div class="col-8 col-sm-6">
 												<div class="card thumbnail card-body">
 													<a href="[%url type:'item ' id:'[@SKU@]'/%]" class="thumbnail-image pb-2"><img src="[@thumb@]" class="product-image img-fluid" alt="[@name@]"></a>
 													<p class="card-title h4"><a href="[%URL type:'item' id:'[@SKU@]'/%]">[%format type:'text' maxlength:'150' rmhtml:'1'%][@name@][%/FORMAT%]</a></p>
@@ -74,16 +74,17 @@
 								</div>
 							[%/param%]
 						[%/discount_products%]
+
 						[%free_gifts id:'[@SKU@]'%]
 							[%param *header%]
 								<!-- Free gifts -->
 								<div class="col-12">
 									<div class="alert alert-success">
-										<h3 class="h2">FREEBIES! <small>Buy [@name@] &amp; choose from one of these free gifts!</small></h3>
+										<h5 class="h2 font-weight-bolder">FREE! <small>Buy [@name@] &amp; choose from one of these free gifts!</small></h5>
 										<div class="row products-row">
 							[%/param%]
 							[%param *body%]
-											<div class="col-8 col-sm-6 col-md-3">
+											<div class="col-8 col-sm-6">
 												<div class="card thumbnail card-body">
 													<a href="[%url type:'item ' id:'[@SKU@]'/%]" class="thumbnail-image pb-2"><img src="[@thumb@]" class="product-image img-fluid" alt="[@name@]"></a>
 													<p class="card-title h4"><a href="[%URL type:'item' id:'[@SKU@]'/%]">[%format type:'text' maxlength:'150' rmhtml:'1'%][@name@][%/FORMAT%]</a></p>
@@ -97,6 +98,7 @@
 								</div>
 							[%/param%]
 						[%/free_gifts%]
+
 						<div class="col-12">
 							<!-- product_information template -->
 							[%load_template file:"products/includes/product_information.template.html"/%]
