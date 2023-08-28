@@ -4,12 +4,25 @@
 	<meta itemprop="sku" content="[@sku@]"/>
 	<div class="wrapper-product-title">
 		
-		<h5 class="mb-3" itemprop="brand" aria-label="Product Name">
+
+		[%if [@available_preorder_quantity@] > 0 AND [@preorder@] AND [@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
+			<span itemprop="availability" content="http://schema.org/PreOrder" class="badge badge-warning mb-1">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</span>
+		[%elseif [@store_quantity@] > 0 AND [@preorder@] AND ![@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
+			<span itemprop="availability" content="http://schema.org/PreOrder" class="badge badge-warning mb-1">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</span>
+		[%elseif [@store_quantity@] > 0 AND ![@preorder@] %]
+			<span itemprop="availability" content="http://schema.org/InStock" class="badge badge-success mb-1">In Stock</span>
+		[%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
+			<span itemprop="availability" content="http://schema.org/LimitedAvailability" class="badge badge-danger mb-1">Sold Out - Backorder Available</span>
+		[%else%]
+			<span itemprop="availability" content="http://schema.org/OutOfStock" class="badge badge-danger mb-1">Sold Out</span>
+		[%/if%]
+
+		<h5 class="mb-0" itemprop="brand" aria-label="Product Brand">
 			[@brand@]
 		</h5>
 
-		<h1 itemprop="name" aria-label="Product Name">
-			[%url_info type:'product' id:'[@inventory_id@]' name:'page_heading' default:'[@name@]'/%]
+		<h1 class="font-weight-bolder" itemprop="name" aria-label="Product Name">
+			[@name@]
 		</h1>
 
 		[%if [@subtitle@]%]
@@ -25,7 +38,7 @@
 			<link itemprop="url" href="[@url@]"/>
 			<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
 			[%if ![@inpromo@]%]
-				<div class="h1" itemprop="price" content="[@store_price@]" aria-label="Store Price">
+				<div class="h1 font-weight-bolder" itemprop="price" content="[@store_price@]" aria-label="Store Price">
 					[%FORMAT type:'currency'%][@store_price@][%/FORMAT%]
 				</div>
 				[%if [@save@] > 0%]
@@ -45,19 +58,24 @@
 						<s>RRP [%FORMAT type:'currency'%][@retail@][%/FORMAT%]</s>
 					</div>
 				[%/if%]
-				<div class="productpromo h1" itemprop="price" content="[@promo_price@]" aria-label="Promo Price">
+				<div class="productpromo h1 font-weight-bolder" itemprop="price" content="[@promo_price@]" aria-label="Promo Price">
 					NOW [%FORMAT type:'currency'%][@promo_price@][%/FORMAT%]
 				</div>
-				[%if [@save@] > 0%]
-					<div class="productsave small" aria-label="Save Price">
-						SAVE [%format type:'percent'%][@save@][%/format%]!
+
+				<div class="rounded bg-sale p-2 text-white" style="width: max-content;">
+					[%if [@save@] > 0%]
+						<div class="productsave small" aria-label="Save Price"> 
+							SAVE [%format type:'percent'%][@save@][%/format%]
+						</div>
+					[%/if%]
+
+					<div class="productsavetext font-weight-bold">
+						Sale Ends in <span id="sale-end" class="time"></span>
 					</div>
-				[%/if%]
-				<div class="productsavetext text-danger font-weight-bold">
-					Sale Ends in <span id="sale-end" class="time"></span>
-				</div>
-				<div class="time-text" itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]">
-					[%format type:'date' format:'DATETIME'%][@promo_end@][%/format%]
+
+					<div class="time-text small" itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]">
+						[%format type:'date' format:'#w #d #K #Y'%][@promo_end@][%/format%]
+					</div>
 				</div>
 			[%/if%]
 
@@ -65,22 +83,14 @@
 			[%tracking_code type:'BuyingOptions' /%]
 			[%/if%]
 			
-			[%if [@available_preorder_quantity@] > 0 AND [@preorder@] AND [@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
-				<span itemprop="availability" content="http://schema.org/PreOrder" class="badge badge-warning">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</span>
-			[%elseif [@store_quantity@] > 0 AND [@preorder@] AND ![@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
-				<span itemprop="availability" content="http://schema.org/PreOrder" class="badge badge-warning">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</span>
-			[%elseif [@store_quantity@] > 0 AND ![@preorder@] %]
-				<span itemprop="availability" content="http://schema.org/InStock" class="badge badge-success">In Stock</span>
-			[%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
-				<span itemprop="availability" content="http://schema.org/LimitedAvailability" class="badge badge-danger">Sold Out - Backorder Available</span>
-			[%else%]
-				<span itemprop="availability" content="http://schema.org/OutOfStock" class="badge badge-danger">Sold Out</span>
-			[%/if%]
+
+
 			[%if [@availability_description@]%]
 				<div class="availability_description">
 					[@availability_description@]
 				</div>
 			[%/if%]
+			
 		</div>
 	[%/if%]
 </div>

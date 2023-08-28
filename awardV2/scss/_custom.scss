@@ -12,6 +12,14 @@
     color: $accent;
 }
 
+.bg-sale{
+    background-color: $sale;
+}
+
+.text-sale{
+    color: $sale;
+}
+
 // Custom Header Styles
 
 .header-button {
@@ -253,4 +261,18 @@ a.meganav-toggle {
 .award-sticky {
     position: sticky;
     top: 0px;
+}
+
+.productsave {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.award-card {
+    border: none;
+    
+    .btn {
+        margin-bottom: 0.5rem;
+        padding: 1rem;
+    }
 }

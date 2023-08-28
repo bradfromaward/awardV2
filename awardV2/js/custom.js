@@ -199,6 +199,8 @@ $(document).ready(function() {
     });
 });
 
+// Mega Nav Masonry Grid
+
 $(document).ready(function() {
 	$('.megagrid').masonry({
 		// options
@@ -210,6 +212,8 @@ $(document).ready(function() {
 
 	});
 });
+
+// ProductListing Calculated Heights
 
 function equalizeProductHeights() {
     var maxHeight = 0;

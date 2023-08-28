@@ -1,26 +1,33 @@
-<div class="tabbable">
+<div class="tabbable-notabs">
 	<ul class="nav nav-tabs" role="tablist">
+		<!--
 		<li class="nav-item" id="tabDescription" role="tab" aria-controls="description" aria-selected="true">
 			<a class="nav-link active" href="#description" data-toggle="tab">Description</a>
 		</li>
+
 		[%if [@warranty@]%]
 			<li class="nav-item" id="tabWarranty" role="tab" aria-controls="warranty" aria-selected="false">
 				<a class="nav-link" href="#warranty" data-toggle="tab">Warranty</a>
 			</li>
 		[%/if%]
+
 		[%if [@features@]%]
 			<li class="nav-item" id="tabFeatures" role="tab" aria-controls="features" aria-selected="false">
 				<a class="nav-link" href="#features" data-toggle="tab">Features</a>
 			</li>
 		[%/if%]
+
 		<li class="nav-item" id="tabSpecifications" role="tab" aria-controls="specifications" aria-selected="false">
 			<a class="nav-link" href="#specifications" data-toggle="tab">Specifications</a>
 		</li>
+
 		[%if [@tnc@]%]
 			<li class="nav-item" id="tabTermsConditions" role="tab" aria-controls="termsConditions" aria-selected="false">
 				<a class="nav-link" href="#termsConditions" data-toggle="tab">Terms and Conditions</a>
 			</li>
 		[%/if%]
+
+
 		[%if [@config:show_product_reviews@]%]
 			<li class="nav-item" id="tabReviews" role="tab" aria-controls="reviews" aria-selected="false">
 				<a class="nav-link reviews" href="#reviews" data-toggle="tab">
@@ -37,18 +44,22 @@
 				</a>
 			</li>
 		[%/if%]
+
+		-->
+
 	</ul>
+
 	<div class="tab-content pt-3">
-		<div class="tab-pane active" id="description" role="tabpanel" aria-labelledby="tabDescription">
-			<div class="card">
-				<div class="card-header py-1 px-2" id="headingDescription">
+		
+		<div class="" id="description" role="tabpanel" aria-labelledby="tabDescription">
+			<div class="award-card">
+				<button class="btn btn-primary btn-block text-left" id="headingDescription" type="button" data-toggle="collapse" data-target="#accordionDescription" aria-expanded="true" aria-controls="accordionDescription">
 					<h5 class="mb-0">
-						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#accordionDescription" aria-expanded="true" aria-controls="accordionDescription">
-							Description
-						</button>
+						Description
 					</h5>
-				</div>
-				<div id="accordionDescription" class="collapse" aria-labelledby="headingDescription">
+				</button>
+				
+				<div id="accordionDescription" class="collapse show" aria-labelledby="headingDescription">
 					<div class="card-body p-md-0">
 						<section class="productdetails n-responsive-content" aria-label="Product Description">
 							[@description@]
@@ -57,16 +68,16 @@
 				</div>
 			</div>
 		</div>
+
 		[%if [@warranty@]%]
-			<div class="tab-pane" id="warranty" role="tabpanel" aria-labelledby="tabWarranty">
-				<div class="card">
-					<div class="card-header py-1 px-2" id="headingWarranty">
+			<div class="" id="warranty" role="tabpanel" aria-labelledby="tabWarranty">
+				<div class="award-card">
+					<button class="btn btn-primary btn-block text-left" id="headingWarranty" type="button" data-toggle="collapse" data-target="#accordionWarranty" aria-expanded="true" aria-controls="accordionWarranty">
 						<h5 class="mb-0">
-							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#accordionWarranty" aria-expanded="true" aria-controls="accordionWarranty">
-								Warranty
-							</button>
+							Warranty
 						</h5>
-					</div>
+					</button>
+					
 					<div id="accordionWarranty" class="collapse" aria-labelledby="headingWarranty">
 						<div class="card-body p-md-0">
 							<div class="n-responsive-content">
@@ -78,15 +89,14 @@
 			</div>
 		[%/if%]
 		[%if [@features@]%]
-			<div class="tab-pane" id="features" role="tabpanel" aria-labelledby="tabFeatures">
-				<div class="card">
-					<div class="card-header py-1 px-2" id="headingFeatures">
+			<div class="" id="features" role="tabpanel" aria-labelledby="tabFeatures">
+				<div class="award-card">
+					<button class="btn btn-primary btn-block text-left" id="headingFeatures" type="button" data-toggle="collapse" data-target="#accordionFeatures" aria-expanded="true" aria-controls="accordionFeatures">
 						<h5 class="mb-0">
-							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#accordionFeatures" aria-expanded="true" aria-controls="accordionFeatures">
-								Features
-							</button>
+							Features
 						</h5>
-					</div>
+					</button>
+
 					<div id="accordionFeatures" class="collapse" aria-labelledby="headingFeatures">
 						<div class="card-body p-md-0">
 							<div class="n-responsive-content">
@@ -97,15 +107,14 @@
 				</div>
 			</div>
 		[%/if%]
-		<div class="tab-pane" id="specifications" role="tabpanel" aria-labelledby="tabSpecifications">
-			<div class="card">
-				<div class="card-header py-1 px-2" id="headingSpecificatoin">
+		<div class="" id="specifications" role="tabpanel" aria-labelledby="tabSpecifications">
+			<div class="award-card">
+				<button class="btn btn-primary btn-block text-left" id="headingSpecifications" type="button" data-toggle="collapse" data-target="#accordionSpecifications" aria-expanded="true" aria-controls="accordionSpecifications">
 					<h5 class="mb-0">
-						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#accordionSpecifications" aria-expanded="true" aria-controls="accordionSpecifications">
-							Specifications
-						</button>
+						Specifications
 					</h5>
-				</div>
+				</button>
+
 				<div id="accordionSpecifications" class="collapse" aria-labelledby="headingSpecificatoin">
 					<div class="card-body p-md-0">
 						[%if [@specifications@]%]
@@ -216,15 +225,13 @@
 			</div>
 		</div>
 		[%if [@tnc@]%]
-			<div class="tab-pane" id="termsConditions" role="tabpanel" aria-labelledby="tabTermsConditions">
-				<div class="card">
-					<div class="card-header py-1 px-2" id="headingTnc">
+			<div class="" id="termsConditions" role="tabpanel" aria-labelledby="tabTermsConditions">
+				<div class="award-card">
+					<button class="btn btn-primary btn-block text-left" id="headingTnc" type="button" data-toggle="collapse" data-target="#accordionTnc" aria-expanded="true" aria-controls="accordionTnc">
 						<h5 class="mb-0">
-							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#accordionTnc" aria-expanded="true" aria-controls="accordionTnc">
-								Terms and Conditions
-							</button>
+							Terms and Conditions
 						</h5>
-					</div>
+					</button>
 					<div id="accordionTnc" class="collapse" aria-labelledby="headingTnc">
 						<div class="card-body p-md-0">
 							<div class="n-responsive-content">
@@ -236,24 +243,22 @@
 			</div>
 		[%/if%]
 		[%if [@config:show_product_reviews@]%]
-			<div class="tab-pane" id="reviews" role="tabpanel" aria-labelledby="tabReviews">
-				<div class="card">
-					<div class="card-header py-1 px-2" id="headingReviews">
+			<div class="" id="reviews" role="tabpanel" aria-labelledby="tabReviews">
+				<div class="award-card">
+					<button class="btn btn-primary btn-block text-left" id="headingReviews" type="button" data-toggle="collapse" data-target="#accordionReviews" aria-expanded="true" aria-controls="accordionReviews">
 						<h5 class="mb-0">
-							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#accordionReviews" aria-expanded="true" aria-controls="accordionReviews">
-								Reviews
-								[%set [@data:ratings-count@] = 1 /%]
-								[%while [@data:ratings-count@] <= [@data:rating@]%]
-									[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
-									<i class="fas fa-star" aria-hidden="true"></i>
-								[%/while%]
-								[%while [@data:ratings-count@] <= 5%]
-									[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
-									<i class="far fa-star" aria-hidden="true"></i>
-								[%/while%]
-							</button>
+							Reviews
+							[%set [@data:ratings-count@] = 1 /%]
+							[%while [@data:ratings-count@] <= [@data:rating@]%]
+								[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
+								<i class="fas fa-star" aria-hidden="true"></i>
+							[%/while%]
+							[%while [@data:ratings-count@] <= 5%]
+								[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
+								<i class="far fa-star" aria-hidden="true"></i>
+							[%/while%]
 						</h5>
-					</div>
+					</button>
 					<div id="accordionReviews" class="collapse" aria-labelledby="headingReviews">
 						<div class="card-body p-md-0">
 							[%thumb_list type:'product_reviews' limit:'5'%]
@@ -302,12 +307,12 @@
 							[%/thumb_list%]
 							[%if [@reviews@] > 0%]
 								<p>
-									<a class="btn btn-default" href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]"><i class="far fa-edit"></i> Write a product review</a>
+									<a class="btn btn-secondary" href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]"><i class="far fa-edit"></i> Write a product review</a>
 								</p>
 							[%else%]
 								<h4>Be The First To Review This Product!</h4>
 								<p>Help other [@config:company_name@] users shop smarter by writing reviews for products you have purchased.</p>
-								<p><a class="btn btn-default" href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]"><i class="far fa-edit"></i> Write a product review</a></p>
+								<p><a class="btn btn-secondary" href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]"><i class="far fa-edit"></i> Write a product review</a></p>
 							[%/if%]
 						</div>
 					</div>
