@@ -84,7 +84,7 @@
 			[%else%]
 				<!-- postcode search -->
 				<p>Enter your postal code to calculate.</p>
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<select class="form-control" name="ship_country">
 					[%countries%]
 						[%PARAM *body%]
@@ -92,12 +92,13 @@
 						[%/param%]
 					[%/countries%]
 					</select>
-				</div>
+				</div> -->
+
 				<div class="form-group">
 					<label for="ship_zip">Post Code</label>
 					<input class="form-control" type="text" size="5" name="ship_zip" id="ship_zip" value="[@ship_zip@]" />
 				</div>
-				<input type="submit" class="btn btn-outline-secondary btn-block" value="Calculate Shipping" />
+				<input type="submit" class="btn btn-outline-primary btn-block" value="Calculate Shipping" />
 			[%/if%]
 		</form>
 	</div>

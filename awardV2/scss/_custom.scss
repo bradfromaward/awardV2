@@ -286,3 +286,19 @@ a.meganav-toggle {
     left: 2px;
     position: relative;
 }
+
+h1 {
+    padding: 2rem 0;
+    font-weight: 700;
+    font-size: 2rem;
+
+    &.display-4 {
+        padding: 2rem 0;
+        font-weight: 700;
+    }
+
+    &.product-title {
+        font-size: 1.7rem;
+        padding: 0;
+    }
+}
