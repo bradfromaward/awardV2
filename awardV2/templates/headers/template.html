@@ -76,15 +76,19 @@
 
 			<!-- Shopping Cart -->
 			<div id="header-cart" class="header-button">
-				<div class="text-primary d-flex flex-column text-center" id="cartcontentsheader"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Shopping cart dropdown">
+				<div class="text-primary d-flex flex-column text-center" id="cartcontentsheader" aria-haspopup="true" aria-expanded="false" aria-label="Shopping cart dropdown">
 					<i class="fa fa-shopping-cart" aria-hidden="true"></i> 
 					<div>
 						<span class="d-none">Cart</span>
 						<span rel="a2c_sub_total" id="header-subtotal">[%format type:'currency'%][%cart id:'product_total'/%][%/format%]</span>
 					</div>
 				</div>
-				<ul class="dropdown-menu dropdown-menu-right float-right">
+				<ul class="award-minicart">
 					<li class="box" id="neto-dropdown">
+						<div id="toggle-minicart" class="minicart-title d-flex align-items-center pt-3">
+							<i class="fa fa-times mr-3"></i>
+							<h3 class="h2 m-0">Quick Cart</h3>
+						</div>
 						<div class="body" id="cartcontents"></div>
 						<div class="footer"></div>
 					</li>

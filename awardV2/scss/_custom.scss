@@ -48,6 +48,86 @@
     }
 }
 
+// Mini Cart Slide Out (All edits are in CSS as Markup is generated on the Neto Servers)
+
+.award-minicart {
+    position: fixed;
+    top:0;
+    right: -350px;
+    width: 350px;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    transition: box-shadow ease-in-out 100ms;
+    background-color: white;
+
+    &.minicart-open {
+        box-shadow: #0000003d -2rem 0rem 3rem 0rem;
+    }
+
+    #neto-dropdown {
+        width: 100%;
+        height: 100%;
+        list-style: none;
+
+        a {
+            line-height: 0;
+        }
+
+        .minicart-title {
+            padding: 0 1rem;
+            color: $primary;
+            user-select: none;
+
+            &:hover {
+                cursor: pointer;
+
+                .fa-times {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        #cartcontents {
+            padding: 1rem;
+
+            .small {
+                font-size: 1rem;
+            }
+
+            .thumb_cart {
+                font-size: 1.1rem;
+                
+                // Complicated Selector for RemoveFromCart Button
+                ul li div a.float_right {
+                    position: absolute;
+                    right: 16px;           
+                }
+
+                ul li {
+                    font-size: 13px;
+                }
+            }
+
+            .viewcart {
+                color: $black;
+                background-color: $secondary;
+            }
+
+            .checkout {
+                margin-top: 0.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .viewcart, .checkout {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+
 // Mega Navigation Styles
 
 .meganav {

@@ -230,3 +230,27 @@ function equalizeProductHeights() {
 
 $(document).ready(equalizeProductHeights);
 $(window).resize(equalizeProductHeights);  // To handle window resizing
+
+// Custom Mini Cart
+
+$(document).ready(function() {
+    $("#cartcontentsheader").click(ToggleMinicart);
+    $("#toggle-minicart").click(ToggleMinicart);
+});
+
+function ToggleMinicart() {
+	const minicart = $(".award-minicart");
+	const openClass = "minicart-open";
+
+	if(minicart.hasClass(openClass)){
+		minicart.removeClass(openClass);
+		minicart.animate({
+			right: -350,
+		}, 100)
+	} else{
+		minicart.addClass(openClass);
+		minicart.animate({
+			right: 0,
+		}, 100)
+	}
+};
