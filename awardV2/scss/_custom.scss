@@ -1,3 +1,20 @@
+h1 {
+    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+
+    &.display-4 {
+        padding: 2rem 0;
+        font-weight: 700;
+    }
+
+    &.product-title {
+        font-size: 1.7rem;
+        padding: 0;
+    }
+}
+
 .fullwidth {
     //margin-left: -15px;
     //margin-right: -15px;
@@ -22,6 +39,11 @@
 
 .rounded-xl {
     border-radius: 1rem;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    padding-left: 0;
 }
 
 // Custom Header Styles
@@ -371,18 +393,3 @@ a.meganav-toggle {
     position: relative;
 }
 
-h1 {
-    padding: 1.5rem 0;
-    font-weight: 700;
-    font-size: 2rem;
-
-    &.display-4 {
-        padding: 2rem 0;
-        font-weight: 700;
-    }
-
-    &.product-title {
-        font-size: 1.7rem;
-        padding: 0;
-    }
-}
