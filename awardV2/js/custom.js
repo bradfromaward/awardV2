@@ -254,3 +254,4 @@ function ToggleMinicart() {
 		}, 100)
 	}
 };
+

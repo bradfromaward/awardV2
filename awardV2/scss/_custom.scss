@@ -20,6 +20,10 @@
     color: $sale;
 }
 
+.rounded-xl {
+    border-radius: 1rem;
+}
+
 // Custom Header Styles
 
 .header-button {
@@ -368,7 +372,7 @@ a.meganav-toggle {
 }
 
 h1 {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     font-weight: 700;
     font-size: 2rem;
 
