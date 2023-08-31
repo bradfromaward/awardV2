@@ -1,0 +1,44 @@
+<!-- The sidebar include happend here -->
+<div> 
+[%breadcrumb%]
+	[%param *header%]
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+					<meta itemprop="position" content="0" />
+				</li>
+	[%/param%]
+	[%param *body%]
+				<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+					<meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+				</li>
+	[%/param%]
+	[%param *footer%]
+			</ol>
+		</nav>
+	[%/param%]
+[%/breadcrumb%]
+<h1 class="display-4">
+	All Brands
+</h1>
+<p>Browse through our expansive array of premium brands; with such an extensive list, you'll find plenty to scroll through. As a leading superstore, we aim to provide a comprehensive selection that caters to all tastes and needs.</p>
+[%thumb_list type:'content' content_type:'brand' limit:'999' filter_category:'' sortby:'content_name'%]
+    [%param *header%]
+        <div class="row align-items-center">
+    [%/param%]
+    [%param *body%]
+            <div class="brand-item mb-3 text-center col-6 col-md-4 col-lg-3">
+                <a href="[@URL@]">
+                    <img class="img-fluid" src="[%ASSET_URL type:'content' id:'[@content_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/ASSET_URL%]" alt="[@name@]"/>
+					<h3>[@name@]</h3>
+                </a>
+            </div>
+    [%/param%]
+    [%param *footer%]
+        </div>
+    [%/param%]
+[%/thumb_list%]
+
+</div>
