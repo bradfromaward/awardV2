@@ -1,61 +1,75 @@
 <div class="col-12">
-	[%if [@config:show_home_ads@]%]
-		[%advert type:'text' template:'carousel' limit:'10' ad_group:''%]
-			[%param *header%]
-				<section id="homepageCarousel" class="carousel slide" data-ride="carousel" aria-label="Banner images">
-					[%if [@total_showing@] > 1%]
-						<ol class="carousel-indicators">
-							[%site_value id:'counter' type:'load'/%]
-						</ol>
-					[%/if%]
-					<div class="carousel-inner">
-			[%/param%]
-			[%param *footer%]
-					</div>
-					[%if [@total_showing@] > 1%]
-						<a class="carousel-control-prev" href="#homepageCarousel" role="button" data-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="carousel-control-next" href="#homepageCarousel" role="button" data-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
-					[%/if%]
-				</section>
-			[%/param%]
-			[%param *ifempty%]
-				<a class="neto-placeholder neto-placeholder-rotator btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" href="[@config:home_url@]/_cpanel?item=adw&page=view&id=New&plan_id=1">
-					Click to add a banner<br/>
-				</a>
-			[%/param%]
-		[%/advert%]
-	[%/if%]
-	<hr aria-hidden="true" />
-	<h2>Australias Largest Collection of Caravan Accessories</h2>
-	<section id="homepage-content" class="n-responsive-content" aria-label="Main description">[@page_content@]</section>
-	[%if [@config:show_home_ads@]%]
-		[%advert type:'product' limit:'8' template:'' ad_group:'home-section-1'%]
-			[%param *header%]
-				<hr aria-hidden="true"/>
-				<h2 class="sr-only">Featured products</h2>
-				<section class="row products-row" aria-label="Featured products">
-			[%/param%]
-			[%param footer%]
-				</section>
-			[%/param%]
-			[%param *ifempty%]
-				[%random_products filter_category:'' template:'' limit:'8'%]
-					[%param *header%]
-						<hr aria-hidden="true"/>
-						<h2 class="sr-only">Featured products</h2>
-						<section class="row products-row" aria-label="Featured products">
-					[%/param%]
-					[%param *footer%]
-						</section>
-					[%/param%]
-				[%/random_products%]
-			[%/param%]
-		[%/advert%]
-	[%/if%]
+	<div class="row mb-3">
+		<div class="col-12">
+			[%advert type:'text' category:'0' ad_group:'home-top-banner' template:'autobanner' limit:'1'/%]
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col-8">
+			[%advert type:'text' category:'0' ad_group:'home-top-feature' template:'autobanner' limit:'1'/%]
+		</div>
+		<div class="col-4 d-flex flex-column">
+			[%advert type:'text' category:'0' ad_group:'home-top-side' template:'backgroundbanner' limit:'3'/%]
+		</div>
+	</div>
+
+	<h5 class="h-home my-4">SHOP <span>POPULAR</span> BRANDS</h5>
+	[%advert type:'text' category:'0' ad_group:'home-brands' template:'autobanner' limit:'10'%]
+		[%param *header%]
+			<div class="row row-cols-5 mb-3">
+		[%/param%]
+		[%param *body%] 
+				<div class="col px-3" style="height: 6rem;">
+					<a class="award-banner award-backgroundbanner" href="[@url@]">
+						<div style="background-size: contain; background-image:url('[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]')"></div>
+					</a>
+				</div>
+		[%/param%]
+		[%param *footer%]
+			</div>
+		[%/param%]
+	[%/advert%]
+	
+	<h5 class="h-home my-4">SHOP <span>NEW</span> ARRIVALS</h5>
+	<div class="row mb-3">
+		[%new_arrivals template: '' sortby:'top_sellers' limit:'8'/%]
+	</div>
+
+	<h5 class="h-home my-4">SHOP <span>POPULAR</span> CATEGORIES</h5>
+	<p>Popular Catgories to go here...</p>
+
+	<h5 class="h-home my-4">SHOP <span>POPULAR</span> PRODUCTS</h5>
+	<div class="row mb-3">
+		[%top_sellers template: '' limit:'8'/%]
+	</div>
+
+	<h1>Australias Largest Collection of Caravan Accessories</h1>
+
+	<p>
+		Founded in 2004 by Rod and Renee Francis, Award RV Superstore is a family-operated venture and an expansion of our original brand, Award Annexes.
+
+		The Journey Begins with Award Annexes
+
+		In 1990, Rod Francis saw the increasing need for quality onsite accommodation in Victoria's caravan parks. That led him to create Award Annexes, offering a range of premium annexes designed to meet this demand. However, it didn't take long to notice a parallel need: a market eager for high-quality caravan, motorhome, and 4x4 accessories.
+
+		On the Path to Growth
+
+		With business booming, we relocated in 1994 to a comprehensive facility in Ferntree Gully, Victoria. This space, combining a showroom, shop, and factory, helped us become Victoria's largest supplier of Aluminum Annexes. As our product line grew, we diversified into motorhome, 4x4, and marine accessories, offering specialized mail-order services for our expanding clientele.
+
+		The Birth of Award RV Superstore
+
+		In July 2004, Award Annexes evolved into Award RV Superstore, when we acquired four adjoining warehouses to expand both our product line and physical footprint. Armed with an enlarged team and deep-rooted expertise, we now offer an all-inclusive resource for RV enthusiasts.
+
+		A Milestone Achievement
+
+		As of December 10, 2011, Award RV Superstore has the distinction of being the largest caravan and camping accessory store in the Southern Hemisphere. Our 3,000-square-meter showroom located at 924 Burwood Highway, Ferntree Gully, Victoria, is a one-stop-shop for all your camping, caravaning, and motorhome needs.
+
+		Why Choose Us
+
+		As Australia's most extensive store of its kind, we offer an unparalleled selection of products to enhance your outdoor lifestyle. From the moment you walk through our doors, you're not just a customer—you're part of the Award RV Superstore family.
+
+		Visit Us Today
+
+		Stop by and experience the vast array of options we offer. You'll enter as a customer and leave as a friend. We look forward to serving all your RV and outdoor needs.
+	</p>
 </div>
