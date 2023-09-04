@@ -1,0 +1,93 @@
+<!-- The sidebar include happend here -->
+<div> 
+[%breadcrumb%]
+	[%param *header%]
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+					<meta itemprop="position" content="0" />
+				</li>
+	[%/param%]
+	[%param *body%]
+				<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+					<meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+				</li>
+	[%/param%]
+	[%param *footer%]
+			</ol>
+		</nav>
+	[%/param%]
+[%/breadcrumb%]
+<h1 class="display-4">
+	Specials!
+</h1>
+<p class="mb-5">Discover unmatched value with our specials! Premium quality at unbeatable prices, all year round.</p>
+[%thumb_list type:'products' filter_category:'' filter_has_save:'1' filter_inpromo:'0' limit:'[@config:THUMB_LIMIT@]'%]
+	[%param template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/param%]
+	[%param *header%]
+	<div class="row sort_container align-items-center">
+		<div class="col-8 d-none d-lg-block">
+			<div class="btn-text">
+				<strong>[@total_results@]</strong> Product[%if [@total_results@] > 1%]s[%/if%]&nbsp;On Special
+			</div>
+		</div>
+		<div class="col-4">
+			<form class="m-0" method="get" action="[@config:CURRENT_URL@]">
+				<input name="rf" type="hidden" value="[%FILTER_CODE%][%/FILTER_CODE%]">
+				<div class="form-row">
+					<label class="col-2 col-form-label" for="sortby">Sort</label>
+					<div class="col-10">
+						<select id="sortby" name="sortby" onChange="return this.form.submit();" class="form-control" aria-label="Sort products by">
+							<option value="popular" [%SORTBY type:'products' if:'eq' value:'popular'%]selected[%/SORTBY%]>Most Popular</option>
+							<option value="name" [%SORTBY type:'products' if:'eq' value:'name'%]selected[%/SORTBY%]>Name</option>
+							<option value="SKU" [%SORTBY type:'products' if:'eq' value:'SKU'%]selected[%/SORTBY%]>SKU</option>
+							<option value="lowest_price" [%SORTBY type:'products' if:'eq' value:'lowest_price'%]selected[%/SORTBY%]>Lowest Price</option>
+							<option value="highest_price" [%SORTBY type:'products' if:'eq' value:'highest_price'%]selected[%/SORTBY%]>Highest Price</option>
+						</select>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<hr aria-hidden="true" />
+		</div>
+	</div>
+	<div class="[%VIEWBY type:'products' if:'eq' value:'list' if_true:'thumb_list' if_false:'thumb'%][%/VIEWBY%]">
+		<section class="row products-row" aria-label="Products in category">
+		[%/param%]
+		[%param *footer%]
+		</section>
+	</div>
+		[%IF [@total_results@] > [@config:thumb_limit@]%]
+			<div class="row">
+				<div class="col-12">
+					<hr aria-hidden="true"/>
+					<nav aria-label="Page navigation">
+						<ul class="pagination justify-content-center">
+							[%paging limit:'5'%]
+								[%param *previous_page%]<li class="page-item"><a class="page-link" href="[@url@]" aria-label="Go back one page"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>[%/param%]
+								[%param *goback_pages%]<li class="page-item"><a class="page-link" href="[@url@]" aria-label="Go to page [@page@]">[@page@]</a></li>[%/param%]
+								[%param *current_page%]<li class="page-item active"><a class="page-link" href="[@url@]" aria-label="Current page">[@page@]</a></li>[%/param%]
+								[%param *gonext_pages%]<li><a href="[@url@]" class="page-link" aria-label="Go to page [@page@]">[@page@]</a></li>[%/param%]
+								[%param *next_page%]<li class="page-item"><a class="page-link" href="[@url@]" aria-label="Go forward one page"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>[%/param%]
+							[%/paging%]
+						</ul>
+					</nav>
+					<hr aria-hidden="true"/>
+				</div>
+			</div>
+		[%/IF%]
+		[%/param%]
+	[%param *ifempty%]
+		<div class="row">
+			<div class="col-12">
+				<p>This category is empty! Please try another category or use our search function to find what you are looking for. If you require further assistance please contact us.</p>
+			</div>
+		</div>
+	[%/param%]
+[%/thumb_list%]
+</div>

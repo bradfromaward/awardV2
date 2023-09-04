@@ -1,0 +1,30 @@
+<!-- The sidebar include happend here -->
+<div> 
+[%breadcrumb%]
+	[%param *header%]
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+					<meta itemprop="position" content="0" />
+				</li>
+	[%/param%]
+	[%param *body%]
+				<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+					<meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+				</li>
+	[%/param%]
+	[%param *footer%]
+			</ol>
+		</nav>
+	[%/param%]
+[%/breadcrumb%]
+<h1 class="display-4">
+	ON SALE!
+</h1>
+<p class="mb-5">Unbeatable deals on top-quality items await! Explore our curated selection of discounted treasures. Hurry—these offers won't last long!</p>
+<div class="row">
+	[%thumb_list type:'products' filter_category:'' filter_inpromo:'1' sortby:'popular' template:'' limit:'999'/%]
+</div>
+</div>
