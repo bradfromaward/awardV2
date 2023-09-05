@@ -8,7 +8,9 @@
 			</div>
 			<div id="filters" class="collapse">
 				<div class="list-group list-group-flush" role="group">
-					[%product_filter type:'variations' autohide:'0' sortoption:'sortorder'%]
+					
+					<!-- DISABLED Temporarliy
+					[%product_filter type:'variations' autohide:'1' sortoption:'sortorder'%]
 						[%param *header%]
 							<div class="list-group-item filter-title"><h3 class="h4 mb-0">Filter By [@filter_name@]</h3></div>
 						[%/param%]
@@ -26,9 +28,12 @@
 							[%/if%]
 						[%/param%]
 					[%/product_filter%]
-					[%product_filter type:'category' limit:'100' autohide:'0' filter_parent_content:'1'%]
+					-->
+
+					[%product_filter type:'category' hide_single_option:'1' limit:'50' filter_parent_content:'1'%]
 						[%param header%]
 							<div class="list-group-item filter-title"><h3 class="h4 mb-0">Filter By Category</h3></div>
+							<div class="filter-container">
 						[%/param%]
 						[%param *body%]
 							[%if [@selected@]%]
@@ -43,7 +48,11 @@
 								</a>
 							[%/if%]
 						[%/param%]
+						[%param *footer%]
+							</div>
+						[%/param%]
 					[%/product_filter%]
+
 					[%product_filter type:'instock' autohide:'0'%]
 						[%param header%]
 							<div class="list-group-item filter-title"><h3 class="h4 mb-0">Filter By Stock</h3></div>
@@ -115,8 +124,8 @@
 								<form id="pricesearch" method="get" action="[@config:current_url@]">
 									<input type="hidden" name="rf" value="[%FILTER_CODE id:'price'%][%/FILTER_CODE%]">
 									<input  name="pr" type="hidden" value="">
-									<input type="submit" value="Filter Price" class="btn btn-outline-secondary btn-sm" />
-									[%if [@selected@]%]<a href="[@remove_url@]" class="btn btn-outline-secondary btn-sm" rel="nofollow"> Clear</a>[%/if%]
+									<input type="submit" value="Filter Price" class="btn btn-secondary btn-sm" />
+									[%if [@selected@]%]<a href="[@remove_url@]" class="btn btn-secondary btn-sm" rel="nofollow"> Clear</a>[%/if%]
 								</form>
 							</div>
 						[%/param%]
@@ -124,6 +133,7 @@
 					[%product_filter type:'brand' autohide:'0'%]
 						[%param header%]
 							<div class="list-group-item filter-title"><h3 class="h4 mb-0">Filter By Brand</h3></div>
+							<div class="filter-container">
 						[%/param%]
 						[%param *body%]
 							[%if [@selected@]%]
@@ -137,6 +147,9 @@
 									<span class="badge badge-secondary badge-pill">[@total@]</span>
 								</a>
 							[%/if%]
+						[%/param%]
+						[%param *footer%]
+							</div>
 						[%/param%]
 					[%/product_filter%]
 				</div>

@@ -255,3 +255,42 @@ function ToggleMinicart() {
 	}
 };
 
+// Filters Filter
+
+$(document).ready(function() {
+	//Remove Small Un-Useful Filters
+	
+	$('.filter').each((i,el) => {
+		var badgeValue = parseInt($(el).find('.badge').text(), 10);
+
+		if (badgeValue < 3) {
+			$(el).remove();
+		}
+	})
+
+	// Order Filter Containers
+	$('.filter-container').each((i,el) => {
+
+		  // Step 1: Collect the elements into an array
+		  var filters = $(el).find('.filter').toArray();
+
+		  console.log(filters);
+  
+		  // Step 2: Sort the array based on the badge value
+		  filters.sort(function(a, b) {
+			var badgeValueA = parseInt($(a).find('.badge').text(), 10);
+			var badgeValueB = parseInt($(b).find('.badge').text(), 10);
+			return badgeValueB - badgeValueA; // For descending order, swap A and B for ascending
+		  });
+		
+		  // Step 3: Remove the existing elements from the DOM
+		  $(el).find('.filter').remove();
+		  
+		  // Step 4: Re-insert the sorted elements
+		  $(filters).each(function(index, element) {
+			// Append each element back to its parent container
+			// (Assuming that the parent container has a class .list-group)
+			$(el).append(element);
+		  });
+	});
+});
