@@ -1,8 +1,7 @@
 	</div>
 </div>
-<footer class="wrapper-footer">
+<footer class="wrapper-footer bg-primary py-5 mt-3">
 	<div class="container">
-		<div class="row"><div class="col-12"><hr aria-hidden="true" /></div></div>
 		<div class="row">
 			<div class="col-12 col-md-8">
 				<nav class="row" aria-label="Footer menu">
@@ -11,19 +10,19 @@
 							[%param *level_1%]
 								<div class="col-12 col-md-4 text-md-left">
 									<ul class="nav flex-column">
-										<li class="nav-item"><h4 class="nav-link py-0">[@name@]</h4></li>
+										<li class="nav-item text-light"><h4 class="nav-link py-0">[@name@]</h4></li>
 										[@next_level@]
 									</ul>
 								</div>
 							[%/param%]
 							[%param *level_2%]
-								<li class="nav-item"><a href="[@url@]" class="nav-link">[@name@]</a></li>
+								<li class="nav-item"><a href="[@url@]" class="nav-link text-light">[@name@]</a></li>
 							[%/param%]
 						[%/menu%]
 					[%/cache%]
 				</nav>
 			</div>
-			<div class="col-12 col-md-4 text-md-left">
+			<div class="col-12 col-md-4 text-md-left text-light">
 				<h4>Stay In Touch</h4>
 				[%if [@config:show_newsletter_subscribe@]%]
 					<p>Subscribe to our newsletter and we'll keep you up to date on our products and services.</p>
@@ -34,14 +33,14 @@
 						<input type="hidden" name="inp-opt_in" value="y" />
 						<div class="input-group">
 							<input name="inp-email" class="form-control" type="email" value="[%nohtml%][@inp-email@][%/nohtml%]" placeholder="Email Address" required aria-label="Email Address"/>
-							<div class="input-group-append"><input class="btn btn-outline-secondary" type="submit" value="Subscribe" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>"/></div>
+							<div class="input-group-append"><input class="btn btn-secondary" type="submit" value="Subscribe" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>"/></div>
 						</div>
-						<div class="checkbox">
-							<label>
+						<div class="checkbox mt-3">
+							<label class="text-light">
 								<input type="checkbox" value="y" class="terms_box" required/>
 								I have read and agree to
-								<a href="#" data-toggle="modal" data-target="#termsModal">Terms &amp; Conditions</a> and
-								<a href="#" data-toggle="modal" data-target="#privacyModal">Privacy Policy</a>.
+								<a class="text-secondary" href="#" data-toggle="modal" data-target="#termsModal">Terms &amp; Conditions</a> and
+								<a class="text-secondary" href="#" data-toggle="modal" data-target="#privacyModal">Privacy Policy</a>.
 							</label>
 						</div>
 					</form>
@@ -78,7 +77,6 @@
 				</ul>
 			</div>
 		</div>
-		<div class="row"><div class="col-12"><hr aria-hidden="true"/></div></div>
 		<div class="row">
 			<div class="col-12 col-md-8 d-none d-sm-block">
 				[%checkout_pay_icons show_icon:'1' ignore_balance:'1'%]
@@ -98,7 +96,7 @@
 				[%/checkout_pay_icons%]
 			</div>
 			<div class="col-12 col-md-4 text-md-left">
-				<p class="small" data-test-id="address">
+				<p class="small text-light" data-test-id="address">
 					<strong>Copyright &copy; [%format type:'date' format:'#Y'%]today[%/format%] [@config:company_name@].</strong>
 					[%if [@config:show_platform_branding@]%]E-commerce software by <a href="https://www.netohq.com" target="_blank" rel="nofollow noopener">Maropost</a>[%/if%]<br/>
 					[%if [@config:company_abn@]%]<strong>[%if [@config:PRIMARY_ABN_LABEL@]%][@config:PRIMARY_ABN_LABEL@][%else%]ABN[%/if%]:</strong> [@config:company_abn@]<br>[%/ if%]
