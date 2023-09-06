@@ -136,7 +136,7 @@
 				[%menu id:'awardV2'%]
 					[%param *level_1%]
 						<li class="nav-item [%if [@css_class@]%] [@css_class@][%/if%]">
-							<a href="[@url@]" class="nav-link [%if [@css_class@]%] [@css_class@][%/if%]" aria-expanded="true">[@name@]</a>
+							<a href="[@url@]" class="nav-link text-dark font-weight-bold award-hover[%if [@css_class@]%] [@css_class@][%/if%]" aria-expanded="true">[@name@]</a>
 							<!-- Removed Level 2 -->
 						</li>
 						[%/param%]
@@ -185,8 +185,8 @@
 			<div class="meganav-explore p-3">
 				[%advert type:'text' category:'0' ad_group:'meganav-explore' template:'autobanner' limit:'8'/%]
 			</div>
-		</h3>
 		</div>
+
 		[%menu id:'sidebar_menu'%]
 			[%param *level_1%]
 				<li class="meganav-section px-3 py-2">
@@ -194,22 +194,30 @@
 						<span class=""> [@name@] </span> 
 						<i class="fa fa-chevron-right"></i>
 					</div>
+
 					[%if [@next_level@]%]
-					<div class="meganav-block bg-accent">
+					<div class="meganav-block bg-white">
 						<h3 class="bg-primary p-3 m-0">
 							<i class="fa fa-arrow-left fa-lg text-white mr-3 meganav-block-toggle"></i> 
 							<a class="text-white" href="[@url@]">View All [@name@]</a>
 						</h3>
-						<ul class="megagrid px-4 py-3 list-unstyled">
+						<ul class="megagrid p-5 list-unstyled">
 							[@next_level@]
 						</ul>
 					</div>
 					[%/if%]
+
 				</li>
 				[%/param%]
 			[%param *level_2%]
-				<li class="meganav-level-2"> 
-					<a class="text-dark" href="[@url@]">[@name@]</a>
+				<li class="meganav-level-2">
+					<div class="row no-gutters mb-1">
+						<div class="col-auto" style="max-width: 90%;">
+							<a class="d-block text-dark text-truncate" href="[@url@]">[@name@]</a>
+							<div class="mt-1" style="border-bottom: 1px solid lightgray; width: 100%"></div>
+						</div>
+						<i class="col-auto my-auto ml-3 fa fa-chevron-right"></i>
+					</div>
 					[%if [@next_level@]%]
 						<ul class="list-unstyled">
 							[@next_level@]
@@ -218,7 +226,7 @@
 				</li>
 				[%/param%]
 			[%param *level_3%]
-				<li class="meganav-level-3">
+				<li class="meganav-level-3 mt-1">
 					<a class="text-dark" href="[@url@]">[@name@]</a>
 				</li>
 			[%/param%]

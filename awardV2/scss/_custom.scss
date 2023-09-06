@@ -101,6 +101,13 @@ form {
     }
 }
 
+.award-hover {
+
+    &:hover {
+        color: $primary !important;
+    }
+}
+
 // Custom Nav
 
 .awardnav {
@@ -204,6 +211,7 @@ form {
     left: 0;
     right: 0;
     z-index: 30;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 30px 0px;
 }
 
 div.meganav-toggle {
@@ -237,6 +245,10 @@ a.meganav-toggle {
 
 .meganav-section {
     border-bottom: 1px solid #00000017;
+
+    &:hover {
+        background-color: $accent;
+    }
 }
 
 .meganav-explore {
@@ -267,7 +279,6 @@ a.meganav-toggle {
     &:hover {
         cursor: pointer;
         margin-left: 0.1rem;
-        color: $primary;
     }
 
     @media screen and (max-width: 768px) {
@@ -276,16 +287,16 @@ a.meganav-toggle {
 }
 
 .meganav-level-2 {
-    width: 29%;
+    width: 28%;
     height: max-content;
     margin-bottom: 32px;
 
     a {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: 600;
     }
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1550px) {
         width: 43%;
         margin-bottom: 16px;
     }
@@ -299,7 +310,7 @@ a.meganav-toggle {
 .meganav-level-3 {
 
     a {
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-weight: 400;
     }
 }
