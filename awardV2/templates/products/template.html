@@ -34,6 +34,10 @@
 				<!-- Product Column -->
 				<section class="col-12 col-lg-5 pl-3" role="contentinfo" aria-label="Products information">
 					
+					[%if [@user:group_id@] eq '7'%]
+						<div class="mb-3"><a href="https://www.awardrv.com.au/_cpanel/products/view?id=[@inventory_id@]" target="_blank" rel="noopener noreferrer">STAFF: EDIT IN CONTROL PANEL</a></div>
+					[%/if%]
+
 					<!-- header template -->
 					[%load_ajax_template id:'_header' type:'item' template:'header' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 					
