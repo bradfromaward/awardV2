@@ -172,14 +172,10 @@ $('.multi-add').on('click', function(){
 
 $(document).ready(function() {
     $(".meganav-block-toggle").click(function() {
-
         var desiredContent = $(this).nextUntil('meganav-block');
-		
-
         //var content3 = $(this).children('div.meganav-block').find("a").attr("href");
 
         $(".meganav-block").each(function(index) {
-
 			var content2 = $(this);
 
 			if (!content2.is(desiredContent)) {
