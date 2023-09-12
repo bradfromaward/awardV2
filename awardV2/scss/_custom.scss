@@ -50,6 +50,17 @@ form {
     margin: 0;
 }
 
+// Condenced CMS Template
+.award-condenced {
+    padding-left: 12rem;
+    padding-right: 12rem;
+
+	@include media-breakpoint-down(lg) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
 // Home Page
 
 .award-banner {
