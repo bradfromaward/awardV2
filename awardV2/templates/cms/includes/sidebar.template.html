@@ -159,8 +159,7 @@
 
 	<!-- Sub Categories -->
 
-	[%cache type:'cmenu' id:'sidebar_menu'%]
-    [%menu id:'sidebar_menu'%]
+	[%content_menu content_type:'category' start_category:'[@content_id@]' sortby:'sortorder' show_empty:'1'%]
 		[%param header%]
 			<div class="card d-none d-md-block mb-2">
 				<div class="card-header"><h3 class="h4 mb-0">Categories</h3></div>
@@ -189,8 +188,7 @@
 				</div>
 			</div>
 		[%/param%]
-	[%/CATEGORYMENU%]
-	[%/cache%]
+	[%/content_menu%]
 
 	<!-- View History -->
 
