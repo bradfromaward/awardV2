@@ -4,17 +4,17 @@
 		<meta itemprop="brand" content="[@brand@]"/>
 		<meta itemprop="mpn" content="[@sku@]"/>
 		
-		<a href="[@URL@]" class="thumbnail-image pb-2">
+		<a href="[%url type:'item' id:'[@sku@]'/%]" class="thumbnail-image pb-2">
 			<img src="[%asset_url type:'product' thumb:'thumb' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" itemprop="image" class="product-image img-fluid" alt="[%escape%][@model@][%/escape%]" rel="itmimg[@SKU@]">
 		</a>
-		
+
 		[%brand id:'[@brand@]'%]
 			[%param *body%]
 				<p class="h5" itemprop="brand"><a class="text-black-50" href="[%url id:'[@content_id@]'/%]">[@content_name@]</a></p>
 			[%/param%]
 		[%/brand%]
 		
-		<p class="card-title h4" itemprop="name"><a href="[@URL@]">[%escape%][%format type:'text' truemaxlength:'100' rmhtml:'1'%][@model@][%/format%][%/escape%]</a></p>
+		<p class="card-title h4" itemprop="name"><a href="[%url type:'item' id:'[@sku@]'/%]">[%escape%][%format type:'text' truemaxlength:'100' rmhtml:'1'%][@model@][%/format%][%/escape%]</a></p>
 		
 		<div class="mt-auto">
 			<!-- RRP -->

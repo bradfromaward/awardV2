@@ -54,15 +54,7 @@
 			<hr aria-hidden="true" />
 		[%/param%]
 	[%/advert%]
-	[%advert type:'product' limit:'8' template:'' inherit:'n' ad_group:''%]
-		[%param *header%]
-			<section class="row products-row" aria-label="Featured products">
-		[%/param%]
-		[%param footer%]
-			</section>
-			<hr aria-hidden="true" />
-		[%/param%]
-	[%/advert%]
+
 	[%if [@content_short_description1@] or [@content_short_description2@] or [@content_short_description3@] or [@content_description1@] or [@content_description2@] or [@content_description3@]%]
 		<section class="n-responsive-content" aria-label="Short Description">
 			[@content_short_description1@]
@@ -77,6 +69,19 @@
 		<hr aria-hidden="true" />
 	[%/if%]
 [%/if%]
+
+	[%advert type:'product' category:'[@content_id@]' inherit:'n' limit:'4' template:'' %]
+		[%param *header%]
+			<h3>Featured Products</h3>
+			<section class="row products-row" aria-label="Featured products">
+		[%/param%]
+		[%param footer%]
+			</section>
+			<hr aria-hidden="true" />
+		[%/param%]
+	[%/advert%]
+
+
 [%thumb_list type:'products' limit:'[@config:THUMB_LIMIT@]'%]
 	[%param template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/param%]
 	[%param *header%]

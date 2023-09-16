@@ -458,3 +458,25 @@ a.meganav-toggle {
     position: relative;
 }
 
+//Scroll Fixes
+#scroll {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    margin-right: 0.3em;
+
+    &:hover {
+        overflow: auto;
+        margin-right: 0;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0.3em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+    }
+}
+

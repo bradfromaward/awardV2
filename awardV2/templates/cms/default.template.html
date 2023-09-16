@@ -20,9 +20,19 @@
 		</nav>
 	[%/param%]
 [%/breadcrumb%]
-<h1 class="display-4">
-	[%url_info name:'page_heading' default:'[@content_name@]'/%]
-</h1>
+[%advert type:'text' template:'autobanner' limit:'1' ad_group:'webpage-banner'%]
+    [%param *header%]
+        <div class="mb-3">
+    [%/param%]
+    [%param footer%]
+        </div>
+    [%/param%]
+    [%param *ifempty%]
+		<h1 class="display-4">
+			[%url_info name:'page_heading' default:'[@content_name@]'/%]
+		</h1>
+    [%/param%]
+[%/advert%]
 <p class="text-muted">
 	[%if [@content_author@]%]Author: [@content_author@] &nbsp;[%/if%]
 	[%if [@date_posted@] != 0000-00-00 00:00:00%]Date Posted:[%FORMAT type:'date'%][@date_posted@][%/FORMAT%]&nbsp;[%/if%]

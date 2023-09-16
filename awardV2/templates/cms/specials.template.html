@@ -19,10 +19,20 @@
 		</nav>
 	[%/param%]
 [%/breadcrumb%]
-<h1 class="display-4">
-	Specials!
-</h1>
-<p class="mb-5">Discover unmatched value with our specials! Premium quality at unbeatable prices, all year round.</p>
+[%advert type:'text' template:'autobanner' limit:'1' ad_group:'webpage-banner'%]
+    [%param *header%]
+        <div class="mb-3">
+    [%/param%]
+    [%param footer%]
+        </div>
+    [%/param%]
+    [%param *ifempty%]
+		<h1 class="display-4">
+			[%url_info name:'page_heading' default:'[@content_name@]'/%]
+		</h1>
+    [%/param%]
+[%/advert%]
+<p class="mb-5">Discover unmatched value with our sales! Premium quality at unbeatable prices, all year round.</p>
 [%thumb_list type:'products' filter_category:'' filter_has_save:'1' filter_inpromo:'0' limit:'[@config:THUMB_LIMIT@]'%]
 	[%param template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/param%]
 	[%param *header%]
