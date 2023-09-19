@@ -188,10 +188,17 @@ $(document).ready(function() {
 			}
         });
 
-		$('.megagrid').masonry('layout');
+		$('.megagrid', desiredContent).masonry('layout');
 
-        //content.slideToggle();
-        //content.toggleClass('active-block');
+		// Make my mega nav height equal the meganav block content height 1629
+		var meganavHeight = $('.megagrid', desiredContent).height();
+
+		if(meganavHeight < 800)
+			meganavHeight = 800;
+
+		meganavHeight += 64;
+
+		$('.meganav').height(meganavHeight)
     });
 });
 
@@ -211,6 +218,8 @@ $(document).ready(function() {
 
 // ProductListing Calculated Heights
 
+var isLoaded = false
+
 function equalizeProductHeights() {
     var maxHeight = 0;
     $(".product-clamp-height").each(function() {
@@ -222,6 +231,8 @@ function equalizeProductHeights() {
 	$(".product-clamp-height").each(function() {
         $(this).height(maxHeight + "px") 
     });
+
+	isLoaded = true;
 }
 
 $(document).ready(equalizeProductHeights);
