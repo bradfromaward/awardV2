@@ -227,9 +227,6 @@ $(document).ready(function() {
 });
 
 // ProductListing Calculated Heights
-
-var isLoaded = false
-
 function equalizeProductHeights() {
     var maxHeight = 0;
     $(".product-clamp-height").each(function() {
@@ -241,13 +238,11 @@ function equalizeProductHeights() {
 	$(".product-clamp-height").each(function() {
         $(this).height(maxHeight + "px") 
     });
-
-	isLoaded = true;
 }
 
 $(document).ready(equalizeProductHeights);
 $(window).resize(equalizeProductHeights);  // To handle window resizing
-
+$(window).on( "load", equalizeProductHeights) // call an addtional time if images arnt ready
 // Custom Mini Cart
 
 $(document).ready(function() {
