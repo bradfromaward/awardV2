@@ -109,132 +109,131 @@
 
 	</div>
 	<!-- NavBar -->
-<nav>
-	<div class="navbar navbar-expand-md navbar-light bg-accent awardnav">
+	<nav>
+		<div class="navbar navbar-expand-md navbar-light bg-accent awardnav">
 
-		<div class="collapse navbar-collapse" id="navbarMainMenu">
-			
-		<!-- Mobile Search 
-		<form class="d-block d-md-none" name="productsearch" method="get" action="/" role="search" aria-label="Product search">
-			<input type="hidden" name="rf" value="kw"/>
-			<div class="input-group">
-				<input class="form-control ajax_search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search-xs" autocomplete="off" name="kw" type="search" aria-label="Input search"/>
-				<div class="input-group-append">
-					<button type="submit" value="Search" class="btn btn-outline-secondary" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
+			<div class="collapse navbar-collapse" id="navbarMainMenu">
+				
+			<!-- Mobile Search 
+			<form class="d-block d-md-none" name="productsearch" method="get" action="/" role="search" aria-label="Product search">
+				<input type="hidden" name="rf" value="kw"/>
+				<div class="input-group">
+					<input class="form-control ajax_search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search-xs" autocomplete="off" name="kw" type="search" aria-label="Input search"/>
+					<div class="input-group-append">
+						<button type="submit" value="Search" class="btn btn-outline-secondary" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
+					</div>
 				</div>
-			</div>
-		</form>
-		--> 
+			</form>
+			--> 
 
-		<ul class="navbar-nav" style="width:100%;" role="navigation" aria-label="Main menu">
+			<ul class="navbar-nav" style="width:100%;" role="navigation" aria-label="Main menu">
 
-			<li class="d-none d-md-flex nav-item meganav-toggle" type="button" data-toggle="collapse" data-target="#collapseMeganav">
-				<i class="fa fa-bars fa-md text-white" aria-hidden="true"></i>
-				<a href="#collapseMeganav" class="nav-link text-nowrap meganav-toggle" data-toggle="collapse" href="#collapseMeganav"  aria-expanded="true">Shop All</a>
-			</li>
+				<li class="d-none d-md-flex nav-item meganav-toggle" type="button" data-toggle="collapse" data-target="#collapseMeganav">
+					<i class="fa fa-chevron-down fa-md text-white" aria-hidden="true"></i>
+					<a href="#collapseMeganav" class="nav-link text-nowrap meganav-toggle" data-toggle="collapse" href="#collapseMeganav"  aria-expanded="true">Shop All</a>
+				</li>
 
-			[%cache type:'menu' id:'header-content-menu' ttl:'86400'%]
-				[%menu id:'awardV2'%]
-					[%param *level_1%]
-						<li class="nav-item [%if [@css_class@] eq 'award-nav-remove'%]d-none d-xl-block[%/if%] [%if [@css_class@] eq 'award-nav-right'%]ml-auto [%/if%]">
-							<a href="[@url@]" class="nav-link px-1 px-lg-2 text-dark font-weight-bold text-truncate award-hover [%if [@css_class@]%] [@css_class@][%/if%]" aria-expanded="true">[@name@]</a>
-							<!-- Removed Level 2 -->
-						</li>
+				[%cache type:'menu' id:'header-content-menu' ttl:'86400'%]
+					[%menu id:'awardV2'%]
+						[%param *level_1%]
+							<li class="nav-item [%if [@css_class@] eq 'award-nav-remove'%]d-none d-xl-block[%/if%] [%if [@css_class@] eq 'award-nav-right'%]ml-auto [%/if%]">
+								<a href="[@url@]" class="nav-link px-1 px-lg-2 text-dark font-weight-bold text-truncate award-hover [%if [@css_class@]%] [@css_class@][%/if%]" aria-expanded="true">[@name@]</a>
+								<!-- Removed Level 2 -->
+							</li>
+							[%/param%]
+						[%param *level_2%]
+							<li class="[%if [@next_level@]%] dropdown dropdown-hover [%/if%] [%if [@css_class@]%] [@css_class@][%/if%]"> 
+								<a href="[@url@]" class="nuhover dropdown-item">[@name@]</a>
+								[%if [@next_level@]%]
+									<ul class="dropdown-menu dropdown-menu-horizontal">
+										[@next_level@]
+									</ul>
+								[%/if%]
+							</li>
+							[%/param%]
+						[%param *level_3%]
+							<li class="[%if [@css_class@]%] [@css_class@][%/if%]">
+								<a class="dropdown-item pl-5 pl-sm-4" href="[@url@]">[@name@]</a>
+							</li>
 						[%/param%]
-					[%param *level_2%]
-						<li class="[%if [@next_level@]%] dropdown dropdown-hover [%/if%] [%if [@css_class@]%] [@css_class@][%/if%]"> 
-							<a href="[@url@]" class="nuhover dropdown-item">[@name@]</a>
-							[%if [@next_level@]%]
-								<ul class="dropdown-menu dropdown-menu-horizontal">
-									[@next_level@]
-								</ul>
-							[%/if%]
-						</li>
-						[%/param%]
-					[%param *level_3%]
-						<li class="[%if [@css_class@]%] [@css_class@][%/if%]">
-							<a class="dropdown-item pl-5 pl-sm-4" href="[@url@]">[@name@]</a>
-						</li>
-					[%/param%]
-				[%/menu%]
-			[%/cache%]
-		</ul>
+					[%/menu%]
+				[%/cache%]
+			</ul>
 
-		<ul class="d-block d-md-none navbar-nav navbar-right" role="navigation" aria-label="Accounts menu">
-			<li class="nav-item dropdown">
-				<a href="[%url page:'account'/%]" role="button" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Account dropdown">
-					<i class="fa fa-user"></i> 
-					<span class="visible-lg visible-inline-lg">My Account</span>
-				</a>
-			</li>
-		</ul>
+			<ul class="d-block d-md-none navbar-nav navbar-right" role="navigation" aria-label="Accounts menu">
+				<li class="nav-item dropdown">
+					<a href="[%url page:'account'/%]" role="button" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Account dropdown">
+						<i class="fa fa-user"></i> 
+						<span class="visible-lg visible-inline-lg">My Account</span>
+					</a>
+				</li>
+			</ul>
 
-	  </div>
-
-	</div>
-	
-
-	<ul class="meganav collapse pb-5 bg-secondary list-unstyled" id="collapseMeganav">
-		<h3 class="bg-primary p-3 m-0"> 
-			<i class="fa fa-times fa-lg text-white mr-3" data-toggle="collapse" href="#collapseMeganav"></i> 
-			<a class="text-white" href="https://www.awardrv.com.au/products/">Shop All</a>
-		</h3>
-
-		<div class="d-none d-md-block meganav-block bg-accent">
-			<h3 class="bg-primary p-3 m-0"> 
-				<a class="text-white" href="https://www.awardrv.com.au/products/">Explore</a>
-			</h3>
-			<div class="meganav-explore p-3">
-				[%advert type:'text' category:'0' ad_group:'meganav-explore' template:'autobanner' limit:'8'/%]
 			</div>
 		</div>
+		
 
-		[%menu id:'meganav'%]
-			[%param *level_1%]
-				<li class="meganav-section px-3 py-2">
-					<div class="meganav-level-1 meganav-block-toggle">
-						<span class=""> [@name@] </span> 
-						<i class="fa fa-chevron-right"></i>
-					</div>
+		<ul class="meganav collapse bg-secondary list-unstyled" id="collapseMeganav">
+			<h3 class="bg-primary p-3 m-0"> 
+				<i class="fa fa-times fa-lg text-white mr-3" data-toggle="collapse" href="#collapseMeganav"></i> 
+				<a class="text-white" href="https://www.awardrv.com.au/products/">Shop All</a>
+			</h3>
 
-					[%if [@next_level@]%]
-					<div class="meganav-block bg-white" style="overflow: hidden;">
-						<h3 class="bg-primary p-3 m-0">
-							<i class="fa fa-arrow-left fa-lg text-white mr-3 meganav-block-toggle"></i> 
-							<a class="text-white" href="[@url@]">View All [@name@]</a>
-						</h3>
-						<ul class="megagrid p-3 p-md-5 list-unstyled">
-							[@next_level@]
-						</ul>
-					</div>
-					[%/if%]
+			<div class="d-none d-md-block meganav-block bg-accent">
+				<h3 class="bg-primary p-3 m-0"> 
+					<a class="text-white" href="https://www.awardrv.com.au/products/">Explore</a>
+				</h3>
+				<div class="meganav-explore p-3">
+					[%advert type:'text' category:'0' ad_group:'meganav-explore' template:'autobanner' limit:'8'/%]
+				</div>
+			</div>
 
-				</li>
-				[%/param%]
-			[%param *level_2%]
-				<li class="meganav-level-2">
-					<div class="row no-gutters mb-1">
-						<div class="col-auto" style="max-width: 90%;">
-							<a class="d-block text-dark text-truncate" href="[@url@]">[@name@]</a>
-							<div class="mt-1" style="border-bottom: 1px solid lightgray; width: 100%"></div>
+			[%menu id:'meganav'%]
+				[%param *level_1%]
+					<li class="meganav-section px-3">
+						<div class="meganav-level-1 meganav-block-toggle" href="[@url@]">
+							<span class="py-2" style="user-select: none;"> [@name@] </span> 
+							<i class="fa fa-chevron-right"></i>
 						</div>
-						<i class="col-auto my-auto ml-3 fa fa-chevron-right"></i>
-					</div>
-					[%if [@next_level@]%]
-						<ul class="list-unstyled">
-							[@next_level@]
-						</ul>
-					[%/if%]
-				</li>
+
+						[%if [@next_level@]%]
+						<div class="meganav-block bg-white" style="overflow: hidden;">
+							<h3 class="bg-primary p-3 m-0">
+								<i class="fa fa-arrow-left fa-lg text-white mr-3 meganav-block-toggle"></i> 
+								<a class="text-white" href="[@url@]">View All [@name@]</a>
+							</h3>
+							<ul class="megagrid p-3 p-md-5 list-unstyled">
+								[@next_level@]
+							</ul>
+						</div>
+						[%/if%]
+
+					</li>
+					[%/param%]
+				[%param *level_2%]
+					<li class="meganav-level-2">
+						<div class="row no-gutters mb-1">
+							<div class="col-auto" style="max-width: 90%;">
+								<a class="d-block text-dark text-truncate" href="[@url@]">[@name@]</a>
+								<div class="mt-1" style="border-bottom: 1px solid lightgray; width: 100%"></div>
+							</div>
+							<a href="[@url@]"><i class="col-auto my-auto text-dark fa fa-chevron-right"></i></a>
+						</div>
+						[%if [@next_level@]%]
+							<ul class="list-unstyled">
+								[@next_level@]
+							</ul>
+						[%/if%]
+					</li>
+					[%/param%]
+				[%param *level_3%]
+					<li class="meganav-level-3 mt-1">
+						<a class="text-dark" href="[@url@]">[@name@]</a>
+					</li>
 				[%/param%]
-			[%param *level_3%]
-				<li class="meganav-level-3 mt-1">
-					<a class="text-dark" href="[@url@]">[@name@]</a>
-				</li>
-			[%/param%]
-		[%/menu%]
-	</ul>
-</nav>
+			[%/menu%]
+		</ul>
+	</nav>
 </header>
 <div id="main-content" class="container" role="main">
 	<div class="row">

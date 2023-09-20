@@ -171,7 +171,13 @@ $('.multi-add').on('click', function(){
 });
 
 $(document).ready(function() {
-    $(".meganav-block-toggle").click(function() {
+	$(".meganav-block-toggle").on("dblclick", (function() {
+		var link = $(this).attr('href');
+		var url = window.location.origin + link;
+		window.location.href = url;
+	}));
+	
+	$(".meganav-block-toggle").click(function() {
         var desiredContent = $(this).nextUntil('meganav-block');
         //var content3 = $(this).children('div.meganav-block').find("a").attr("href");
 
@@ -192,14 +198,18 @@ $(document).ready(function() {
 
 		// Make my mega nav height equal the meganav block content height 1629
 		var meganavHeight = $('.megagrid', desiredContent).height();
-
+		
+		meganavHeight += 64;
+		
 		if(meganavHeight < 800)
-			meganavHeight = 800;
-
+		meganavHeight = 800;
+	
 		meganavHeight += 64;
 
 		$('.meganav').height(meganavHeight)
     });
+
+
 });
 
 // Mega Nav Masonry Grid
@@ -281,7 +291,7 @@ $(document).ready(function() {
 		  // Step 1: Collect the elements into an array
 		  var filters = $(el).find('.filter').toArray();
 
-		  console.log(filters);
+		  //console.log(filters);
   
 		  // Step 2: Sort the array based on the badge value
 		  filters.sort(function(a, b) {
