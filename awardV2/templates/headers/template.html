@@ -25,18 +25,6 @@
 			</a>
 		</div>
 
-		<!-- Mobile Cart Depreciated 
-		<div class="col d-none text-right">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false" aria-label="Toggle navigation">
-				<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
-			</button>
-			<a class="navbar-toggler d-sm-inline-block d-md-none" href="[%url page:'checkout' type:'cart'/%]" aria-label="Shopping cart">
-				<i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
-				<span class="badge badge-pill badge-secondary" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span>
-			</a>
-		</div>
-		-->
-
 		<div class="d-none d-md-block col">
 			<div class="header-search pt-2 pt-md-0">
 				<form name="productsearch" method="get" action="/" role="search" aria-label="Product search">
@@ -56,7 +44,7 @@
 			
 			<!-- Desktop Wish List -->
 			<div class="d-none d-md-block header-button" aria-label="Wishlist Button">
-				<a href="[%url page:'account' type:'wishlist'/%]" role="button" class="text-primary d-flex flex-column text-center">
+				<a href="[%url page:'account' type:'wishlist'/%]" role="button" class="text-primary d-flex flex-column text-center award-header-link-hover">
 					<i class="fa fa-heart"></i> 
 					<span class="visible-lg visible-inline-lg">Wishlist</span>
 				</a>
@@ -64,7 +52,7 @@
 
 			<!-- Desktop Account -->
 			<div class="d-none d-md-block header-button" aria-label="Accounts menu">
-				<a href="[%url page:'account'/%]" role="button" class="text-primary d-flex flex-column text-center">
+				<a href="[%url page:'account'/%]" role="button" class="text-primary d-flex flex-column text-center award-header-link-hover">
 					<i class="fa fa-user"></i> 
 					[%if [@user:username@]%]
 						<span class="visible-lg visible-inline-lg">Account</span>
@@ -74,9 +62,17 @@
 				</a>
 			</div>
 
+			<!-- Mobile Search -->
+			<div class="d-block d-md-none header-button" aria-label="Search menu">
+				<a href="#collapseMobileSearch" role="button"  data-toggle="collapse" data-target="#collapseMobileSearch" class="text-primary d-flex flex-column text-center award-header-link-hover">
+					<i class="fa fa-search"></i> 
+					<span class="visible-lg visible-inline-lg">Search</span>
+				</a>
+			</div>
+
 			<!-- Shopping Cart -->
 			<div id="header-cart" class="header-button">
-				<div class="text-primary d-flex flex-column text-center" id="cartcontentsheader" aria-haspopup="true" aria-expanded="false" aria-label="Shopping cart dropdown">
+				<div class="text-primary d-flex flex-column text-center award-header-link-hover" id="cartcontentsheader" aria-haspopup="true" aria-expanded="false" aria-label="Shopping cart dropdown">
 					<i class="fa fa-shopping-cart" aria-hidden="true"></i> 
 					<div>
 						<span class="d-none">Cart</span>
@@ -96,7 +92,7 @@
 			</div>
 
 			<!-- Hamburger Menu -->
-			<button class="navbar-toggler d-block d-md-none text-primary" type="button" data-toggle="collapse" data-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler d-block d-md-none text-primary award-header-link-hover" type="button" data-toggle="collapse" data-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false" aria-label="Toggle navigation">
 				<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
 			</button>
 
@@ -112,64 +108,76 @@
 	<nav>
 		<div class="navbar navbar-expand-md navbar-light bg-accent awardnav">
 
-			<div class="collapse navbar-collapse" id="navbarMainMenu">
-				
-			<!-- Mobile Search 
-			<form class="d-block d-md-none" name="productsearch" method="get" action="/" role="search" aria-label="Product search">
+			<div class="collapse navbar-collapse" id="navbarMainMenu">		
+				<!-- Mobile Search 
+				<form class="d-block d-md-none" name="productsearch" method="get" action="/" role="search" aria-label="Product search">
+					<input type="hidden" name="rf" value="kw"/>
+					<div class="input-group">
+						<input class="form-control ajax_search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search-xs" autocomplete="off" name="kw" type="search" aria-label="Input search"/>
+						<div class="input-group-append">
+							<button type="submit" value="Search" class="btn btn-outline-secondary" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
+						</div>
+					</div>
+				</form>
+				--> 
+
+				<ul class="navbar-nav" style="width:100%;" role="navigation" aria-label="Main menu">
+
+					<li class="d-none d-md-flex nav-item meganav-toggle" type="button" data-toggle="collapse" data-target="#collapseMeganav">
+						<i class="fa fa-chevron-down fa-md text-white" aria-hidden="true"></i>
+						<a href="#collapseMeganav" class="nav-link text-nowrap meganav-toggle" data-toggle="collapse" href="#collapseMeganav"  aria-expanded="true">Shop All</a>
+					</li>
+
+					[%cache type:'menu' id:'header-content-menu' ttl:'86400'%]
+						[%menu id:'awardV2'%]
+							[%param *level_1%]
+								<li class="nav-item [%if [@css_class@] eq 'award-nav-remove'%]d-none d-xl-block[%/if%] [%if [@css_class@] eq 'award-nav-right'%]ml-auto [%/if%]">
+									<a href="[@url@]" class="nav-link px-1 px-lg-2 text-dark font-weight-bold text-truncate award-hover [%if [@css_class@]%] [@css_class@][%/if%]" aria-expanded="true">[@name@]</a>
+									<!-- Removed Level 2 -->
+								</li>
+								[%/param%]
+							[%param *level_2%]
+								<li class="[%if [@next_level@]%] dropdown dropdown-hover [%/if%] [%if [@css_class@]%] [@css_class@][%/if%]"> 
+									<a href="[@url@]" class="nuhover dropdown-item">[@name@]</a>
+									[%if [@next_level@]%]
+										<ul class="dropdown-menu dropdown-menu-horizontal">
+											[@next_level@]
+										</ul>
+									[%/if%]
+								</li>
+								[%/param%]
+							[%param *level_3%]
+								<li class="[%if [@css_class@]%] [@css_class@][%/if%]">
+									<a class="dropdown-item pl-5 pl-sm-4" href="[@url@]">[@name@]</a>
+								</li>
+							[%/param%]
+						[%/menu%]
+					[%/cache%]
+				</ul>
+
+				<ul class="d-block d-md-none navbar-nav navbar-right" role="navigation" aria-label="Accounts menu">
+					<li class="nav-item dropdown">
+						<a href="[%url page:'account'/%]" role="button" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Account dropdown">
+							<i class="fa fa-user"></i> 
+							<span class="visible-lg visible-inline-lg">My Account</span>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+		<div class="collapse bg-primary" id="collapseMobileSearch">
+			<form class="d-block d-md-none px-2 py-4 bg-primary" style="position: relative; z-index: 30;" name="productsearch" method="get" action="/" role="search" aria-label="Product search">
 				<input type="hidden" name="rf" value="kw"/>
+				<h5 class="text-light">Quick Search</h5>
 				<div class="input-group">
 					<input class="form-control ajax_search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search-xs" autocomplete="off" name="kw" type="search" aria-label="Input search"/>
 					<div class="input-group-append">
-						<button type="submit" value="Search" class="btn btn-outline-secondary" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
+						<button type="submit" value="Search" class="btn btn-secondary" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
 					</div>
 				</div>
 			</form>
-			--> 
-
-			<ul class="navbar-nav" style="width:100%;" role="navigation" aria-label="Main menu">
-
-				<li class="d-none d-md-flex nav-item meganav-toggle" type="button" data-toggle="collapse" data-target="#collapseMeganav">
-					<i class="fa fa-chevron-down fa-md text-white" aria-hidden="true"></i>
-					<a href="#collapseMeganav" class="nav-link text-nowrap meganav-toggle" data-toggle="collapse" href="#collapseMeganav"  aria-expanded="true">Shop All</a>
-				</li>
-
-				[%cache type:'menu' id:'header-content-menu' ttl:'86400'%]
-					[%menu id:'awardV2'%]
-						[%param *level_1%]
-							<li class="nav-item [%if [@css_class@] eq 'award-nav-remove'%]d-none d-xl-block[%/if%] [%if [@css_class@] eq 'award-nav-right'%]ml-auto [%/if%]">
-								<a href="[@url@]" class="nav-link px-1 px-lg-2 text-dark font-weight-bold text-truncate award-hover [%if [@css_class@]%] [@css_class@][%/if%]" aria-expanded="true">[@name@]</a>
-								<!-- Removed Level 2 -->
-							</li>
-							[%/param%]
-						[%param *level_2%]
-							<li class="[%if [@next_level@]%] dropdown dropdown-hover [%/if%] [%if [@css_class@]%] [@css_class@][%/if%]"> 
-								<a href="[@url@]" class="nuhover dropdown-item">[@name@]</a>
-								[%if [@next_level@]%]
-									<ul class="dropdown-menu dropdown-menu-horizontal">
-										[@next_level@]
-									</ul>
-								[%/if%]
-							</li>
-							[%/param%]
-						[%param *level_3%]
-							<li class="[%if [@css_class@]%] [@css_class@][%/if%]">
-								<a class="dropdown-item pl-5 pl-sm-4" href="[@url@]">[@name@]</a>
-							</li>
-						[%/param%]
-					[%/menu%]
-				[%/cache%]
-			</ul>
-
-			<ul class="d-block d-md-none navbar-nav navbar-right" role="navigation" aria-label="Accounts menu">
-				<li class="nav-item dropdown">
-					<a href="[%url page:'account'/%]" role="button" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Account dropdown">
-						<i class="fa fa-user"></i> 
-						<span class="visible-lg visible-inline-lg">My Account</span>
-					</a>
-				</li>
-			</ul>
-
-			</div>
 		</div>
 		
 

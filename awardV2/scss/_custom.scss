@@ -119,6 +119,23 @@ form {
     }
 }
 
+.award-header-link-hover {
+    text-decoration: none !important;
+    
+    &:hover {
+        cursor: pointer;
+        color: $link-hover-color !important;
+
+        span {
+            text-decoration: none !important;
+        }
+
+        i {
+            text-decoration: none !important;
+        }
+    }
+}
+
 // Custom Nav
 
 .awardnav {
