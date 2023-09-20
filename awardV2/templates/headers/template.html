@@ -109,17 +109,6 @@
 		<div class="navbar navbar-expand-md navbar-light bg-accent awardnav">
 
 			<div class="collapse navbar-collapse" id="navbarMainMenu">		
-				<!-- Mobile Search 
-				<form class="d-block d-md-none" name="productsearch" method="get" action="/" role="search" aria-label="Product search">
-					<input type="hidden" name="rf" value="kw"/>
-					<div class="input-group">
-						<input class="form-control ajax_search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search-xs" autocomplete="off" name="kw" type="search" aria-label="Input search"/>
-						<div class="input-group-append">
-							<button type="submit" value="Search" class="btn btn-outline-secondary" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
-						</div>
-					</div>
-				</form>
-				--> 
 
 				<ul class="navbar-nav" style="width:100%;" role="navigation" aria-label="Main menu">
 
@@ -131,7 +120,7 @@
 					[%cache type:'menu' id:'header-content-menu' ttl:'86400'%]
 						[%menu id:'awardV2'%]
 							[%param *level_1%]
-								<li class="nav-item [%if [@css_class@] eq 'award-nav-remove'%]d-none d-xl-block[%/if%] [%if [@css_class@] eq 'award-nav-right'%]ml-auto [%/if%]">
+								<li class="nav-item [%if [@css_class@] eq 'award-nav-remove'%]d-none d-xl-block[%/if%] [%if [@css_class@] eq 'award-nav-right'%]ml-0 ml-md-auto [%/if%]">
 									<a href="[@url@]" class="nav-link px-1 px-lg-2 text-dark font-weight-bold text-truncate award-hover [%if [@css_class@]%] [@css_class@][%/if%]" aria-expanded="true">[@name@]</a>
 									<!-- Removed Level 2 -->
 								</li>
@@ -158,8 +147,7 @@
 				<ul class="d-block d-md-none navbar-nav navbar-right" role="navigation" aria-label="Accounts menu">
 					<li class="nav-item dropdown">
 						<a href="[%url page:'account'/%]" role="button" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Account dropdown">
-							<i class="fa fa-user"></i> 
-							<span class="visible-lg visible-inline-lg">My Account</span>
+							<span class="visible-lg visible-inline-lg text-dark font-weight-bold">My Account</span>
 						</a>
 					</li>
 				</ul>
