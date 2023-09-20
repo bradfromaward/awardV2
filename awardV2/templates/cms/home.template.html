@@ -56,23 +56,25 @@
 	</div>
 
 	<!-- Featured Blog Posts -->
-	<h5 class="h-home my-5">OUR <span>BLOG</span></h5>
+	<h5 class="h-home my-5">OUR <span>POSTS</span></h5>
 	[%thumb_list type:'content' content_type:'blog' limit:'3' sortby:'date_posted-desc'%]
 		[%param *header%]
-			<section class="row my-3 text-center" aria-label="Our Blog">
+			<section class="row my-3 mb-5 text-center" aria-label="Our Posts">
 				<div class="col-12">
 					<div class="row">
 		[%/param%]
 		[%param *body%]
-						<article class="col-12 col-lg-4">
-							<a href="[@URL@]"><img src="[%ASSET_URL type:'content' id:'[@content_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/ASSET_URL%]" alt="[@content_name@]" class="img-fluid"/></a>
-							<h4><a href="[@URL@]" itemprop="url">[@content_name@]</a></h4>
+						<article class="col-12 col-lg-4 mb-3 mb-md-0 d-flex flex-column">
+							<a href="[@URL@]">
+								<img src="[%ASSET_URL type:'content' id:'[@content_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/ASSET_URL%]" alt="[@content_name@]" class="img-fluid rounded-lg"/>
+							</a>
+							<!-- <h4><a href="[@URL@]" itemprop="url">[@content_name@]</a></h4> -->
 							[%if [@content_short_description1@]%]
-								<p>[%format type:'text' rmhtml:'1' truemaxlength:'210'%][@content_short_description1@][%/format%]</p>
+								<p class="mt-3">[%format type:'text' rmhtml:'1' truemaxlength:'210'%][@content_short_description1@][%/format%]</p>
 							[%else%]
-								<p>[%format type:'text' rmhtml:'1' truemaxlength:'210'%][@content_description1@][%/format%]</p>
+								<p class="mt-3">[%format type:'text' rmhtml:'1' truemaxlength:'210'%][@content_description1@][%/format%]</p>
 							[%/if%]
-							<a href="[@URL@]" class="btn btn-primary btn-block">Read Full Post</a>
+							<a href="[@URL@]" class="btn btn-primary btn-block mt-auto">Read Full Post</a>
 						</article>
 		[%/param%]
 		[%param *footer%]
@@ -82,33 +84,30 @@
 		[%/param%]
 	[%/thumb_list%]
 
-	<h1>Australias Largest Collection of Caravan Accessories</h1>
 
-	<p>
-		Founded in 2004 by Rod and Renee Francis, Award RV Superstore is a family-operated venture and an expansion of our original brand, Award Annexes.
+	<div class="row">
+		<div class="col-8">
+			<h1>Australias Largest Collection of Caravan Accessories</h1>
+			<h3>The Journey Begins with Award Annexes</h3>
+			<p>In 1990, Rod Francis saw the increasing need for quality onsite accommodation in Victoria's caravan parks. That led him to create Award Annexes, offering a range of premium annexes designed to meet this demand. However, it didn't take long to notice a parallel need: a market eager for high-quality caravan, motorhome, and 4x4 accessories.</p>
 
-		The Journey Begins with Award Annexes
+			<h3>On the Path to Growth</h3>
+			<p>With business booming, we relocated in 1994 to a comprehensive facility in Ferntree Gully, Victoria. This space, combining a showroom, shop, and factory, helped us become Victoria's largest supplier of Aluminum Annexes. As our product line grew, we diversified into motorhome, 4x4, and marine accessories, offering specialized mail-order services for our expanding clientele.</p>
 
-		In 1990, Rod Francis saw the increasing need for quality onsite accommodation in Victoria's caravan parks. That led him to create Award Annexes, offering a range of premium annexes designed to meet this demand. However, it didn't take long to notice a parallel need: a market eager for high-quality caravan, motorhome, and 4x4 accessories.
+			<h3>The Birth of Award RV Superstore</h3>
+			<p>In July 2004, Award Annexes evolved into Award RV Superstore, when we acquired four adjoining warehouses to expand both our product line and physical footprint. Armed with an enlarged team and deep-rooted expertise, we now offer an all-inclusive resource for RV enthusiasts.</p>
 
-		On the Path to Growth
+			<h3>A Milestone Achievement</h3>
+			<p>As of December 10, 2011, Award RV Superstore has the distinction of being the largest caravan and camping accessory store in the Southern Hemisphere. Our 3,000-square-meter showroom located at 924 Burwood Highway, Ferntree Gully, Victoria, is a one-stop-shop for all your camping, caravaning, and motorhome needs.</p>
 
-		With business booming, we relocated in 1994 to a comprehensive facility in Ferntree Gully, Victoria. This space, combining a showroom, shop, and factory, helped us become Victoria's largest supplier of Aluminum Annexes. As our product line grew, we diversified into motorhome, 4x4, and marine accessories, offering specialized mail-order services for our expanding clientele.
+			<h3>Why Choose Us</h3>
+			<p>As Australia's most extensive store of its kind, we offer an unparalleled selection of products to enhance your outdoor lifestyle. From the moment you walk through our doors, you're not just a customer—you're part of the Award RV Superstore family.</p>
 
-		The Birth of Award RV Superstore
-
-		In July 2004, Award Annexes evolved into Award RV Superstore, when we acquired four adjoining warehouses to expand both our product line and physical footprint. Armed with an enlarged team and deep-rooted expertise, we now offer an all-inclusive resource for RV enthusiasts.
-
-		A Milestone Achievement
-
-		As of December 10, 2011, Award RV Superstore has the distinction of being the largest caravan and camping accessory store in the Southern Hemisphere. Our 3,000-square-meter showroom located at 924 Burwood Highway, Ferntree Gully, Victoria, is a one-stop-shop for all your camping, caravaning, and motorhome needs.
-
-		Why Choose Us
-
-		As Australia's most extensive store of its kind, we offer an unparalleled selection of products to enhance your outdoor lifestyle. From the moment you walk through our doors, you're not just a customer—you're part of the Award RV Superstore family.
-
-		Visit Us Today
-
-		Stop by and experience the vast array of options we offer. You'll enter as a customer and leave as a friend. We look forward to serving all your RV and outdoor needs.
-	</p>
+			<h3>Visit Us Today</h3>
+			<p>Stop by and experience the vast array of options we offer. You'll enter as a customer and leave as a friend. We look forward to serving all your RV and outdoor needs.</p>
+		</div>
+		<div class="col-4">
+			<div style="background-image:url('[@config:imageurl@]/LoginImage2.webp'); background-position: center; width: 100%; height: 100%; border-radius: 1rem;"></div>
+		</div>
+	</div>
 </div>
