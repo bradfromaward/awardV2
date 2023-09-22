@@ -1,0 +1,388 @@
+<!-- START JAVASCRIPT AND CSS INCLUDES - DO NOT REMOVE -->
+<link rel="stylesheet" type="text/css" href="[%ntheme_asset%][@ebay_themeurl@]/css/style.css[%/ntheme_asset%]?[@config:NETO_CSS_VERSION@]" media="all"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+    #pic {
+        margin: auto;
+        display: block;
+    }
+</style>
+<div class="nActive-wrapper">
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="container-header background-img clearfix">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="company-logo"><img src="[%asset_url type:'logo' thumb:'ebay'/%]" alt="Logo"></div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="nav-wrapper">
+                            <nav class="navbar" role="navigation">
+                                <div class="container-fluid">
+                                    <div class="nAccordion">
+                                    <ul>
+                                    <li>
+                                    <input type="checkbox" checked>
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+                                            <i class="fa fa-bars" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <div class="collapse navbar-collapse" id="main-navbar">
+
+                                        <ul class="nav navbar-nav">
+                                            [%ebay_category_menu%]
+                                                [%param header%]
+                                                     <li class="dropdown dropdown-hover">
+                                                        <a href="">Categories <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                                            <ul class="dropdown-menu">
+                                                [%/param%]
+                                                [%PARAM *level_1%]
+                                                            <li><a href="[@url@]">[@name@]</a></li>
+                                                [%/param%]
+                                                [%param footer%]
+                                                            </ul>
+                                                    </li>
+                                                [%/param%]
+                                            [%/ebay_category_menu%]
+                                            [%menu id:'ebay_header'%]
+                                                [%param header%]
+                                            [%/param%]
+                                            [%PARAM *level_1%]
+                                            <li><a href="[@url@]">[@name@]</a></li>
+                                            [%/param%]
+                                            [%param footer%]
+                                                [%/param%]
+                                            [%/menu%]
+                    
+                                            
+                                        </ul>
+                                            
+                                    </div>
+                                    </li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                 <br>
+                <h1>[@MODEL@]</h1>
+                [%if [@subtitle@]%]
+                    <h3 class="muted">[@SUBTITLE@]</h3>
+                [%/if%]
+                <p class="main-price">$[@price_3@]</p>
+                <hr>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8">
+                        <div id="main-image">
+                            <img src="[@image_full@]" hspace="0" vspace="0" border="0" align="left" name="mainphoto">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="alt-image row">
+                            <!-- image one -->
+                            [%if [@image@]%]
+                            <div class="col-xs-3 col-sm-6"><img src="[@image@]" width="180" hspace="10" vspace="8" border="0" align="left"></div>
+                            
+                            [%/if%]
+                            [%if [@thumb_1@]%]
+                            <!-- image two -->
+                            <div class="col-xs-3 col-sm-6"><img src="[@thumb_1@]" width="180" hspace="10" vspace="8" border="0" align="left"></div>
+                            
+                            [%/if%]
+                            [%if [@thumb_2@]%]
+                            <!-- image three -->
+                            <div class="col-xs-3 col-sm-6"><img src="[@thumb_2@]" width="180" hspace="10" vspace="8" border="0" align="left"></div>
+                            
+                            [%/if%]
+                            [%if [@thumb_3@]%]
+                            <!-- image four -->
+                            <div class="col-xs-3 col-sm-6"><img src="[@thumb_3@]" width="180" hspace="10" vspace="8" border="0" align="left"></div>
+                            
+                            [%/if%]
+                             [%if [@thumb_4@]%]
+                            <!-- image five -->
+                            <div class="col-xs-3 col-sm-6"><img src="[@thumb_4@]" width="180" hspace="10" vspace="8" border="0" align="left"></div>
+                            
+                            [%/if%]
+                             [%if [@thumb_5@]%]
+                            <!-- image six -->
+                            <div class="col-xs-3 col-sm-6"><img src="[@thumb_5@]" width="180" hspace="10" vspace="8" border="0" align="left"></div>
+                            
+                            [%/if%]
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                <div class="nAccordion">
+                    <ul>
+                    <li>
+                        <input type="checkbox" checked>
+                        <h2>Description</h2>
+                        <div class="nContent-panel">
+                            [%if [@ebay_description@]%]
+                                    <div class="productdetails">[@EBAY_DESCRIPTION@]</div>
+                            [%/if%]
+                            [%if ![@ebay_description@]%]
+                                [%if [@description@]%]
+                                    <div class="productdetails">[@DESCRIPTION@]</div>
+                                [%/if%]
+                            [%/if%]
+                            <strong>Specifications</strong><br>
+                            [%if [@specifications@]%]
+                                    [@SPECIFICATIONS@]
+                                    <div class="clear"></div><br/>
+                            [%/if%]
+                            <ul>
+                                <li><strong>SKU</strong>: [@SKU@]</li>
+                                [%if [@manufacturer_model@]%]
+                                    <li><strong>Model #</strong>: [@MANUFACTURER_MODEL@]</li>
+                                [%/if%]
+                                [%if [@barcode@]%]
+                                    <li><strong>Barcode #</strong>: [@BARCODE@]</li>
+                                [%/if%]
+                                [%if [@brand@]%]
+                                    <li><strong>Brand</strong>: [@BRAND@]</li>
+                                [%/if%]
+                                [%if [@artisit_author@]%]
+                                   <li><strong>Artist / Author</strong>: [@ARTIST_AUTHOR@]</li>
+                                [%/if%]
+                                [%if [@weight@] ne '0.0000'%]
+                                   <li><strong>Shipping Weight</strong>: [@WEIGHT@]kg</li>
+                                [%/if%]
+                                [%if [@width@]%]
+                                   <li><strong>Shipping Width</strong>: [@WIDTH@]cm</li>
+                                [%/if%]
+                                [%if [@height@]%]
+                                   <li><strong>Shipping Height</strong>: [@HEIGHT@]cm</li>
+                                [%/if%]
+                                [%if [@length@]%]
+                                    <li><strong>Shipping Length</strong>: [@LENGTH@]cm</li>
+                                [%/if%]
+                                [%if [@cubic@] ne '0.000000'%]
+                                    <li><strong>Shipping Cubic</strong>: [@CUBIC@]m3</li>
+                                [%/if%]
+                                [%if [@unit@]%]
+                                    <li><strong>Unit Of Measure</strong>: [@UNIT@]</li>
+                                [%/if%]
+                                [%if [@actual_length@] ne '0.000'%]
+                                    <li><strong>Assembled Length</strong>: [@ACTUAL_LENGTH@]cm</li>
+                                [%/if%]
+                                [%if [@actual_height@] ne '0.000'%]
+                                    <li><strong>Assembled Height</strong>: [@ACTUAL_HEIGHT@]cm</li>
+                                [%/if%]
+                                [%if [@actual_width@] ne '0.000'%]
+                                    <li><strong>Assembled Width</strong>: [@ACTUAL_WIDTH@]cm</li>
+                                [%/if%]
+                                [%if [@product_type@]%]
+                                    <li><strong>Type</strong>: [@PRODUCT_TYPE@]</li>
+                                [%/if%]
+                                [%if [@format@]%]
+                                    <li><strong>Format</strong>: [@FORMAT@]</li>
+                                [%/if%]
+                            </ul>
+                                        
+                            <div class="well">
+                                [%content_zone id:'ebay_notes'%][%end content_zone%]
+                            </div> 
+                        </div>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" checked>
+                        <h2>Specifications</h2>
+                        <div class="nContent-panel">
+                            [%if [@specifications@]%]
+                                [@SPECIFICATIONS@]
+                                <div class="clear"></div><br/>
+                            [%/if%]
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><strong>SKU</strong></td>
+                                        <td>[@SKU@]</td>
+                                    </tr>
+                                    [%if [@manufacturer_model@]%]
+                                        <tr>
+                                            <td><strong>Model #</strong></td>
+                                            <td>[@MANUFACTURER_MODEL@]</td>
+                                        </tr>
+                                    [%/if%]
+                                        [%if [@barcode@]%]
+                                        <tr>
+                                            <td><strong>Barcode #</strong></td>
+                                            <td>[@BARCODE@]</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@brand@]%]
+                                        <tr>
+                                            <td><strong>Brand</strong></td>
+                                            <td>[@BRAND@]</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@artisit_author@]%]
+                                        <tr>
+                                            <td><strong>Artist / Author</strong></td>
+                                            <td>[@ARTIST_AUTHOR@]</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@weight@] ne '0.0000'%]
+                                        <tr>
+                                            <td><strong>Shipping Weight</strong></td>
+                                            <td>[@WEIGHT@]kg</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@width@]%]
+                                        <tr>
+                                            <td><strong>Shipping Width</strong></td>
+                                            <td>[@WIDTH@]cm</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@height@]%]
+                                        <tr>
+                                            <td><strong>Shipping Height</strong></td>
+                                            <td>[@HEIGHT@]cm</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@length@]%]
+                                        <tr>
+                                            <td><strong>Shipping Length</strong></td>
+                                            <td>[@LENGTH@]cm</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@cubic@] ne '0.000000'%]
+                                        <tr>
+                                            <td><strong>Shipping Cubic</strong></td>
+                                            <td>[@CUBIC@]m3</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@unit@]%]
+                                        <tr>
+                                            <td><strong>Unit Of Measure</strong></td>
+                                            <td>[@UNIT@]</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@actual_length@] ne '0.000'%]
+                                        <tr>
+                                            <td><strong>Assembled Length</strong></td>
+                                            <td>[@ACTUAL_LENGTH@]cm</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@actual_height@] ne '0.000'%]
+                                        <tr>
+                                            <td><strong>Assembled Height</strong></td>
+                                            <td>[@ACTUAL_HEIGHT@]cm</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@actual_width@] ne '0.000'%]
+                                        <tr>
+                                            <td><strong>Assembled Width</strong></td>
+                                            <td>[@ACTUAL_WIDTH@]cm</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@product_type@]%]
+                                        <tr>
+                                            <td><strong>Type</strong></td>
+                                            <td>[@PRODUCT_TYPE@]</td>
+                                        </tr>
+                                    [%/if%]
+                                    [%if [@format@]%]
+                                        <tr>
+                                            <td><strong>Format</strong></td>
+                                            <td>[@FORMAT@]</td>
+                                        </tr>
+                                    [%/if%]
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+
+                    [%if [@warranty@]%]
+                    <li>
+                        <input type="checkbox" checked>
+                        <h2>Warranty</h2>
+                        <div class="nContent-panel">
+                            [@warranty@]
+                        </div>
+                    </li>
+                    [%/if%]
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    
+    [%EBAY_UPSELL SKU:'[@SKU@]'%] [%PARAM *header%]
+    <div class="row">
+        <ul class="thumbnails">
+            <li class="col-sm-12"><hr/><h3>You May Also Like</h3></li>
+    [%/PARAM%][%PARAM *body%]
+            <li class="wrapper-thumbnail col-sm-4 col-md-3">
+                <div class="thumbnail">
+                    <div class="image-box">
+                        <a href="[@EBAY_UPSELL_URL@]" title="[@EBAY_TITLE@]"> <img  style=" background-image: url([@UPSELL_THUMB@]);" src="[@EBAY_THEMEURL@]/img/spacer.gif" alt="[@EBAY_TITLE@]" border="0"/></a>
+                    </div>
+                    <div class="caption">
+                        <h5 class="title"><a href="[@EBAY_UPSELL_URL@]">[%FORMAT type:'text' maxlength:'40' rmhtml:'1'%][@EBAY_UPSELL_TITLE@][%/FORMAT%]</a></h5>
+                        <p class="price">$[@UPSELL_CURRENT_PRICE@]</p>
+                    </div>
+                </div>
+            </li>
+    [%/PARAM%][%PARAM footer%]
+        </ul>
+    </div>
+    [%/PARAM%] [%/EBAY_UPSELL%]
+    
+    [%EBAY_crosssell SKU:'[@SKU@]'%] [%PARAM *header%]
+    <div class="row">
+        <ul class="thumbnails">
+                    <li class="col-sm-12"><hr/><h3>We Also Recommend</h3></li>
+    [%/PARAM%][%PARAM *body%]
+                    <li class="wrapper-thumbnail col-sm-4 col-md-3">
+                        <div class="thumbnail">
+                            <div class="image-box">
+                                <a href="[@EBAY_UPSELL_URL@]" title="[@EBAY_TITLE@]"> <img style=" background-image: url([@UPSELL_THUMB@]);" src="[@EBAY_THEMEURL@]/img/spacer.gif" alt="[@EBAY_TITLE@]" border="0"/> </a>
+                            </div>
+                            <div class="caption">
+                                <h5 class="title"><a href="[@EBAY_UPSELL_URL@]">[%FORMAT type:'text' maxlength:'40' rmhtml:'1'%][@EBAY_UPSELL_TITLE@][%/FORMAT%]</a></h5>
+                                <p class="price">$[@UPSELL_CURRENT_PRICE@]</p>
+                            </div>
+                        </div>
+                    </li>
+    [%/PARAM%][%PARAM footer%]
+        </ul>
+    </div>
+    [%/PARAM%] [%/EBAY_crosssell%]
+    
+    
+    
+    
+    
+    <div class="container-footer background-img clearfix">
+        <div class="row">
+            <div class="col-xs-12 center">
+                <a href="http://my.ebay.com.au/ws/eBayISAPI.dll?AcceptSavedSeller&sellerid=jm-embroideries" class="btn btn-lg btn-success"><i class="fa fa-envelope" aria-hidden="true"></i> Sign up for newsletter</a>
+            </div>
+            <div class="col-sm-12 center">
+                <small>E-commerce Software By Neto &nbsp; | &nbsp; &copy; [@config:COMPANY_NAME@]</small>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
