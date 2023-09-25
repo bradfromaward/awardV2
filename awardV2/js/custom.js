@@ -238,11 +238,12 @@ function equalizeProductHeights() {
 	$(".product-clamp-height").each(function() {
         $(this).height(maxHeight + "px") 
     });
+
 }
 
-$(document).ready(equalizeProductHeights);
-$(window).resize(equalizeProductHeights);  // To handle window resizing
-$(window).on( "load", equalizeProductHeights) // call an addtional time if images arnt ready
+//$(document).ready(equalizeProductHeights);
+//$(window).resize(equalizeProductHeights);  // To handle window resizing
+$(window).on( "load", equalizeProductHeights) // Proper time to call the function; Fixed Thumb height bug
 // Custom Mini Cart
 
 $(document).ready(function() {

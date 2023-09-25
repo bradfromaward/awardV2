@@ -1,4 +1,5 @@
 <aside class="col-12 col-md-3" id="left-sidebar">
+
 	[%IF [@page_type@] eq 'category' and [@config:show_filters@]%]
 		<div class="card mb-2">
 			<div class="card-header border-bottom">
@@ -159,7 +160,7 @@
 
 	<!-- Sub Categories -->
 
-	[%content_menu content_type:'category' start_category:'[@content_id@]' sortby:'sortorder' show_empty:'1'%]
+	[%content_menu content_type:'category' start_category:'[@content_id@]' sortby:'name' show_empty:'1'%]
 		[%param header%]
 			<div class="card d-none d-md-block mb-2">
 				<div class="card-header"><h3 class="h4 mb-0">Categories</h3></div>
