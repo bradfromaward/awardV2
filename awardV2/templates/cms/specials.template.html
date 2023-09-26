@@ -33,6 +33,19 @@
     [%/param%]
 [%/advert%]
 <p class="mb-5">Discover unmatched value with our sales! Premium quality at unbeatable prices, all year round.</p>
+
+[%advert type:'product' ad_group:'featured-[@content_id@]' inherit:'n' limit:'8' template:'' %]
+	[%param *header%]
+	<div class="award-featured-products px-3 mb-3 py-1 rounded-lg">
+		<h3 class="h2 text-sale font-weight-bolder pb-1 pt-2">Featured Bargins!</h3>
+		<section class="row products-row" aria-label="Featured products">
+	[%/param%]
+	[%param footer%]
+		</section>
+	</div>
+	[%/param%]
+[%/advert%]
+
 [%thumb_list type:'products' filter_category:'' filter_has_save:'1' filter_inpromo:'0' limit:'[@config:THUMB_LIMIT@]'%]
 	[%param template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/param%]
 	[%param *header%]
@@ -71,7 +84,7 @@
 	[%/paging%]
 
 	[%IF [@apage@] == 1%]
-		[%advert type:'product' inherit:'n' limit:'12' template:'' %]
+		[%advert type:'product' ad_group:'top-products' inherit:'n' limit:'12' template:'' %]
 			[%param *header%]
 				<section class="row products-row" aria-label="Featured products">
 			[%/param%]
