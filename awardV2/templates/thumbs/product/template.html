@@ -16,6 +16,10 @@
 		
 		<p class="card-title h4" itemprop="name"><a href="[@URL@]">[%escape%][%format type:'text' truemaxlength:'100' rmhtml:'1'%][@model@][%/format%][%/escape%]</a></p>
 		
+		[%if [@subtitle@]%]
+			<p class="text-muted" role="heading" aria-label="Product Subtitle">[@subtitle@]</p>
+		[%/if%]
+
 		<div class="mt-auto">
 			<!-- RRP -->
 			[%if [@save@] > 0%]
