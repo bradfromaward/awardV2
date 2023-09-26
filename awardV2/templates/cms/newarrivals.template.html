@@ -40,6 +40,26 @@
 [%thumb_list type:'products' sortby:'new_arrivals' filter_instock:'1' filter_category:'' limit:'[@config:THUMB_LIMIT@]'%]
 	[%param template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/param%]
 	[%param *header%]
+	
+	[%paging limit:'5'%]
+		[%param *current_page%][%set [@^^^apage@] %][@page@][%/set%][%/param%]
+	[%/paging%]
+
+	[%IF [@apage@] == 1%]
+		[%advert type:'product' ad_group:'featured-[@content_id@]' inherit:'n' limit:'8' template:'' %]
+			[%param *header%]
+			<div class="award-featured-products px-3 mb-3 py-1 rounded-lg">
+				<h3 class="h2 text-primary font-weight-bolder pb-1 pt-2">Featured [@content_name@]</h3>
+				<section class="row products-row" aria-label="Featured products">
+			[%/param%]
+			[%param footer%]
+				</section>
+			</div>
+			<hr aria-hidden="true"/>
+			[%/param%]
+		[%/advert%]
+	[%/IF%]
+	
 	<div class="[%VIEWBY type:'products' if:'eq' value:'list' if_true:'thumb_list' if_false:'thumb'%][%/VIEWBY%]">
 		<section class="row products-row" aria-label="Products in category">
 		[%/param%]
