@@ -1,5 +1,40 @@
 <aside class="col-12 col-md-3" id="left-sidebar">
 
+	<!-- Sub Categories -->
+
+	[%content_menu content_type:'category' start_category:'[@content_id@]' sortby:'name' show_empty:'1'%]
+		[%param header%]
+			<div class="card d-none d-md-block mb-2">
+				<div class="card-header"><h3 class="h4 mb-0">Sub Categories</h3></div>
+				<div class="list-group list-group-flush" role="navigation" aria-label="Category menu">
+		[%/param%]
+		[%param *level_1%]
+			<div class="position-relative border-bottom [%if [@next_level@]%] dropdown dropdown-hover[%/if%]">
+				<a class="text-dark list-group-item list-group-item-action" href="[@url@]">[%escape%][@name@][%/escape%]</a>
+				[%if [@next_level@]%]
+					<ul class="dropdown-menu dropdown-menu-horizontal">[@next_level@]</ul>
+				[%/if%]
+			</div>
+		[%/param%]
+		[%param *level_2%]
+				<li class="[%if [@next_level@]%] dropdown dropdown-hover[%/if%]">
+					<a class="dropdown-item" href="[@url@]">[%escape%][@name@][%/escape%]</a>
+					[%if [@next_level@]%]
+						<ul class="dropdown-menu dropdown-menu-horizontal">[@next_level@]</ul>
+					[%/if%]
+				</li>
+		[%/param%]
+		[%param *level_3%]
+				<li><a class="dropdown-item" href="[@url@]">[%escape%][@name@][%/escape%]</a></li>
+		[%/param%]
+		[%param footer%]
+				</div>
+			</div>
+		[%/param%]
+	[%/content_menu%]
+
+	<!-- Filters -->
+
 	[%IF [@page_type@] eq 'category' and [@config:show_filters@]%]
 		<div class="card mb-2">
 			<div class="card-header border-bottom">
@@ -158,39 +193,6 @@
 		</div>
 	[%/IF%]
 
-	<!-- Sub Categories -->
-
-	[%content_menu content_type:'category' start_category:'[@content_id@]' sortby:'name' show_empty:'1'%]
-		[%param header%]
-			<div class="card d-none d-md-block mb-2">
-				<div class="card-header"><h3 class="h4 mb-0">Categories</h3></div>
-				<div class="list-group list-group-flush" role="navigation" aria-label="Category menu">
-		[%/param%]
-		[%param *level_1%]
-			<div class="position-relative border-bottom [%if [@next_level@]%] dropdown dropdown-hover[%/if%]">
-				<a class="text-dark list-group-item list-group-item-action" href="[@url@]">[%escape%][@name@][%/escape%]</a>
-				[%if [@next_level@]%]
-					<ul class="dropdown-menu dropdown-menu-horizontal">[@next_level@]</ul>
-				[%/if%]
-			</div>
-		[%/param%]
-		[%param *level_2%]
-				<li class="[%if [@next_level@]%] dropdown dropdown-hover[%/if%]">
-					<a class="dropdown-item" href="[@url@]">[%escape%][@name@][%/escape%]</a>
-					[%if [@next_level@]%]
-						<ul class="dropdown-menu dropdown-menu-horizontal">[@next_level@]</ul>
-					[%/if%]
-				</li>
-		[%/param%]
-		[%param *level_3%]
-				<li><a class="dropdown-item" href="[@url@]">[%escape%][@name@][%/escape%]</a></li>
-		[%/param%]
-		[%param footer%]
-				</div>
-			</div>
-		[%/param%]
-	[%/content_menu%]
-
 	<!-- View History -->
 
 	[%CONFIG id:'phistory_limit' if:'ne' value:'0'%]
@@ -207,7 +209,7 @@
 		[%/PRODUCT_HISTORY%]
 	[%/CONFIG%]
 
-	<!-- Web Info Links -->
+	<!-- Web Info Links 
 	[%cache type:'menu' id:'sidebar-info' ttl:'86400'%]
 	[%MENU id:'web_information'%]
 		[%param header%]
@@ -240,6 +242,6 @@
 		[%/param%]
 	[%/MENU%]
 	[%/cache%]
-	
+	-->
 </aside>
 <div class="col-12 col-md-9">

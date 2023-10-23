@@ -303,7 +303,9 @@ $(document).ready(function() {
 		  $(filters).each(function(index, element) {
 			// Append each element back to its parent container
 			// (Assuming that the parent container has a class .list-group)
-			$(el).append(element);
+			// Add Limit to Amount of Filters to reduce clutter
+			if(index < 25)
+				$(el).append(element);
 		  });
 	});
 });
