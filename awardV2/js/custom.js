@@ -309,3 +309,23 @@ $(document).ready(function() {
 		  });
 	});
 });
+
+$(document).ready(function() {
+  $('#cat-collapse').on('show.bs.collapse', function () {
+    $('.cat-chev').css('transform', 'rotate(90deg)'); // Example animation
+  });
+
+  $('#cat-collapse').on('hide.bs.collapse', function () {
+    $('.cat-chev').css('transform', 'rotate(0)'); // Example animation
+  });
+
+  $('#brand-collapse').on('show.bs.collapse', function () {
+    $('.brand-chev').css('transform', 'rotate(90deg)'); // Example animation
+  });
+
+  $('#brand-collapse').on('hide.bs.collapse', function () {
+    $('.brand-chev').css('transform', 'rotate(0)'); // Example animation
+  });
+
+});
+

@@ -68,8 +68,12 @@
 
 					[%product_filter type:'category' hide_single_option:'1' limit:'50' filter_parent_content:'1'%]
 						[%param header%]
-							<div class="list-group-item filter-title"><h3 class="h4 mb-0">Filter By Category</h3></div>
-							<div class="filter-container">
+							<div class="list-group-item filter-title">
+								<a class="text-dark" data-toggle="collapse" href="#cat-collapse" role="button">
+									<h3 class="h4 mb-0">Filter By Category<i class="fa fa-chevron-right ml-1 cat-chev rot-ani"></i></h3>
+								</a>
+							</div>
+							<div class="filter-container collapse" id="cat-collapse">
 						[%/param%]
 						[%param *body%]
 							[%if [@selected@]%]
@@ -107,6 +111,8 @@
 							[%/if%]
 						[%/param%]
 					[%/product_filter%]
+
+					<!-- Remove Hard Select in favour of Range Select
 					[%product_filter type:'price' limit:'6'%]
 						[%param header%]
 							<div class="list-group-item filter-title d-l-none d-xl-none"><h3 class="h4 mb-0">Filter By Price Range</h3></div>
@@ -128,9 +134,11 @@
 							[%/if%]
 						[%/param%]
 					[%/product_filter%]
+					-->
+
 					[%product_filter type:'price' limit:'1'%]
 						[%param header%]
-							<div class="list-group-item filter-title hidden-sm d-none d-sm-block"><h3 class="h4 mb-0">Filter By Price Range</h3></div>
+							<div class="list-group-item filter-title hidden-sm d-none d-sm-block"><h3 class="h4 mb-0">Filter By Price</h3></div>
 						[%/param%]
 						[%param *body%]
 							[%SITE_VALUE id:'footer_javascript'%]
@@ -166,10 +174,15 @@
 							</div>
 						[%/param%]
 					[%/product_filter%]
+
 					[%product_filter type:'brand' autohide:'0'%]
 						[%param header%]
-							<div class="list-group-item filter-title"><h3 class="h4 mb-0">Filter By Brand</h3></div>
-							<div class="filter-container">
+							<div class="list-group-item filter-title">
+								<a class="text-dark" data-toggle="collapse" href="#brand-collapse" role="button">
+									<h3 class="h4 mb-0">Filter By Brand<i class="fa fa-chevron-right ml-1 brand-chev rot-ani"></i></h3>
+								</a>
+							</div>
+							<div class="filter-container collapse" id="brand-collapse">
 						[%/param%]
 						[%param *body%]
 							[%if [@selected@]%]
