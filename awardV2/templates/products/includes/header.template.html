@@ -22,7 +22,7 @@
 		[%brand id:'[@brand@]'%]
 			[%param *body%]
 				[%if [@brand_image@] like 'na.gif'%]
-					<p class="h5 mb-3" itemprop="brand" aria-label="Product Brand"><a class="text-black-50" href="[%url id:'[@content_id@]'/%]">[@content_name@]</a></p>
+					<p class="h5 mb-0" itemprop="brand" aria-label="Product Brand"><a class="text-black-50" href="[%url id:'[@content_id@]'/%]">[@content_name@]</a></p>
 				[%else%]
 					<p class="h5 my-3" itemprop="brand" aria-label="Product Brand"><a href="[%url id:'[@content_id@]'/%]"><img  style="width: 30%;" src="[@brand_image@]" alt="[@Brand@] Logo"></a></p>
 				[%/if%]
