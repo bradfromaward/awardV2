@@ -10,7 +10,7 @@
 							[%param *level_1%]
 								<div class="col-12 col-md-4 text-md-left">
 									<ul class="nav flex-column">
-										<li class="nav-item text-light"><h4 class="nav-link py-0">[@name@]</h4></li>
+										<li class="nav-item text-light"><div class="h4 nav-link py-0">[@name@]</div></li>
 										[@next_level@]
 									</ul>
 								</div>
@@ -23,7 +23,7 @@
 				</nav>
 			</div>
 			<div class="col-12 col-md-4 text-md-left text-light">
-				<h4>Stay In Touch</h4>
+				<div class="h4">Stay In Touch</div>
 				[%if [@config:show_newsletter_subscribe@]%]
 					<p>Subscribe to our newsletter and we'll keep you up to date on our products and services.</p>
 					<form method="post" action="[%URL type:'page' id:'subscribe' https:'1'%][%END URL%]" aria-label="Newsletter subscribe form">
@@ -110,7 +110,7 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Terms &amp; Conditions</h4>
+				<div class="h4" class="modal-title">Terms &amp; Conditions</div>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body">[%content_zone id:'terms'/%]</div>
@@ -122,7 +122,7 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Privacy Policy</h4>
+				<div class="h4" class="modal-title">Privacy Policy</div>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body">[%show_content id:'2'%][%param *body%][@content_description1@][%/param%][%/show_content%]</div>

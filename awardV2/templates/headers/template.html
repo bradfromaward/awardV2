@@ -83,7 +83,7 @@
 					<li class="box" id="neto-dropdown">
 						<div id="toggle-minicart" class="minicart-title d-flex align-items-center pt-3">
 							<i class="fa fa-times mr-3"></i>
-							<h3 class="h2 m-0">Quick Cart</h3>
+							<div class="h2 m-0">Quick Cart</div>
 						</div>
 						<div class="body" id="cartcontents"></div>
 						<div class="footer"></div>
@@ -158,7 +158,7 @@
 		<div class="collapse bg-primary" id="collapseMobileSearch">
 			<form class="d-block d-md-none px-2 py-4 bg-primary" style="position: relative; z-index: 30;" name="productsearch" method="get" action="/" role="search" aria-label="Product search">
 				<input type="hidden" name="rf" value="kw"/>
-				<h5 class="text-light">Quick Search</h5>
+				<div class="text-light mb-2">Quick Search</div>
 				<div class="input-group">
 					<input class="form-control ajax_search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search-xs" autocomplete="off" name="kw" type="search" aria-label="Input search"/>
 					<div class="input-group-append">
@@ -170,15 +170,15 @@
 		
 
 		<ul class="meganav collapse bg-secondary list-unstyled" id="collapseMeganav">
-			<h3 class="bg-primary p-3 m-0"> 
+			<div class="bg-primary p-3 m-0 h3"> 
 				<i class="fa fa-times fa-lg text-white mr-3" data-toggle="collapse" href="#collapseMeganav"></i> 
 				<a class="text-white" href="https://www.awardrv.com.au/products/">Shop All</a>
-			</h3>
+			</div>
 
 			<div class="d-none d-md-block meganav-block bg-accent">
-				<h3 class="bg-primary p-3 m-0"> 
+				<div class="bg-primary p-3 m-0 h3"> 
 					<a class="text-white" href="https://www.awardrv.com.au/products/">Explore</a>
-				</h3>
+				</div>
 				<div class="meganav-explore p-3">
 					[%advert type:'text' category:'0' ad_group:'meganav-explore' template:'autobanner' limit:'8'/%]
 				</div>
@@ -194,10 +194,10 @@
 
 						[%if [@next_level@]%]
 						<div class="meganav-block bg-white" style="overflow: hidden;">
-							<h3 class="bg-primary p-3 m-0">
+							<div class="h3 bg-primary p-3 m-0">
 								<i class="fa fa-arrow-left fa-lg text-white mr-3 meganav-block-toggle"></i> 
 								<a class="text-white" href="[@url@]">View All [@name@]</a>
-							</h3>
+							</div>
 							<ul class="megagrid p-3 p-md-5 list-unstyled">
 								[@next_level@]
 							</ul>

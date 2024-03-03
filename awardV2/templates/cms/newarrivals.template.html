@@ -37,13 +37,61 @@
 	[%advert type:'text' category:'0' ad_group:'meganav-explore' template:'autobanner' limit:'8'/%]
 </div>
 <p class="mb-5">Welcome to our New Arrivals! Updated Monthly! Discover the latest caravan accessories tailored for the Aussie adventurer. From high-tech solar panels to space-saving storage, our new products are designed to enhance your travels. Check back regularly to find premium items that make your journey more enjoyable.</p>
-[%advert type:'product' limit:'50' template:'' ad_group:'new-products'%]
+[%thumb_list type:'products' sortby:'new_arrivals' filter_instock:'1' filter_category:'' limit:'[@config:THUMB_LIMIT@]'%]
+	[%param template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/param%]
 	[%param *header%]
-		<section class="row products-row" aria-label="Featured products">
-	[%/param%]
-	[%param footer%]
+	
+	[%paging limit:'5'%]
+		[%param *current_page%][%set [@^^^apage@] %][@page@][%/set%][%/param%]
+	[%/paging%]
+
+	[%IF [@apage@] == 1%]
+		[%advert type:'product' ad_group:'featured-[@content_id@]' inherit:'n' limit:'8' template:'' %]
+			[%param *header%]
+			<div class="award-featured-products px-3 mb-3 py-1 rounded-lg">
+				<h3 class="h2 text-primary font-weight-bolder pb-1 pt-2">Featured [@content_name@]</h3>
+				<section class="row products-row" aria-label="Featured products">
+			[%/param%]
+			[%param footer%]
+				</section>
+			</div>
+			<hr aria-hidden="true"/>
+			[%/param%]
+		[%/advert%]
+	[%/IF%]
+	
+	<div class="[%VIEWBY type:'products' if:'eq' value:'list' if_true:'thumb_list' if_false:'thumb'%][%/VIEWBY%]">
+		<section class="row products-row" aria-label="Products in category">
+		[%/param%]
+		[%param *footer%]
 		</section>
-		<hr aria-hidden="true"/>
+	</div>
+		[%IF [@total_results@] > [@config:thumb_limit@]%]
+			<div class="row">
+				<div class="col-12">
+					<hr aria-hidden="true"/>
+					<nav aria-label="Page navigation">
+						<ul class="pagination justify-content-center">
+							[%paging limit:'5'%]
+								[%param *previous_page%]<li class="page-item"><a class="page-link" href="[@url@]" aria-label="Go back one page"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>[%/param%]
+								[%param *goback_pages%]<li class="page-item"><a class="page-link" href="[@url@]" aria-label="Go to page [@page@]">[@page@]</a></li>[%/param%]
+								[%param *current_page%]<li class="page-item active"><a class="page-link" href="[@url@]" aria-label="Current page">[%set [@^^^apage@] %][@page@][%/set%][@page@]</a></li>[%/param%]
+								[%param *gonext_pages%]<li><a href="[@url@]" class="page-link" aria-label="Go to page [@page@]">[@page@]</a></li>[%/param%]
+								[%param *next_page%]<li class="page-item"><a class="page-link" href="[@url@]" aria-label="Go forward one page"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>[%/param%]
+							[%/paging%]
+						</ul>
+					</nav>
+					<hr aria-hidden="true"/>
+				</div>
+			</div>
+		[%/IF%]
+		[%/param%]
+	[%param *ifempty%]
+		<div class="row">
+			<div class="col-12">
+				<p>New Arrivals is empty! Please try another category or use our search function to find what you are looking for. If you require further assistance please contact us.</p>
+			</div>
+		</div>
 	[%/param%]
-[%/advert%]
+[%/thumb_list%]
 </div>
