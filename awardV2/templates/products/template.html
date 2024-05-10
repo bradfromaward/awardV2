@@ -25,6 +25,15 @@
 		<div itemscope itemtype="http://schema.org/Product">
 			<div class="row">
 
+				[%advert type:'text' category:'0' ad_group:'product-banner-[@sku@]' template:'autobanner' limit:'1'%]
+					[%param *header%]
+						<div class="col-12 mb-3">
+					[%/param%]
+					[%param footer%]
+						</div>
+					[%/param%]
+				[%/advert%]
+
 				<!-- Image Column -->
 				<section class="col-12 col-lg-7 pr-5 award-product-image" role="contentinfo" aria-label="Product images">
 					<!-- images template -->

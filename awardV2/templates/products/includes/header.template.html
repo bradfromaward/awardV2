@@ -13,6 +13,8 @@
 			<span itemprop="availability" content="http://schema.org/InStock" class="badge badge-success mb-1">In Stock</span>
 		[%elseif [@misc2@] eq 'y'%]
 			<span itemprop="availability" content="http://schema.org/BackOrder" class="badge badge-success mb-1">Special Order</span>
+		[%elseif [@store_quantity@] < 1 AND [@misc8@] eq 'y' %]
+			<span itemprop="availability" content="http://schema.org/OutOfStock" class="badge btn-inactive mb-1">Discontinued</span>
 		[%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
 			<span itemprop="availability" content="http://schema.org/LimitedAvailability" class="badge badge-danger mb-1">Sold Out - Backorder Available</span>
 		[%else%]

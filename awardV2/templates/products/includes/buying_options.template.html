@@ -109,13 +109,15 @@
 		<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb" value="[@thumb@]">
 		<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku" value="[@SKU@]">
 		<div class="">
-			<div class="mb-2">
-				<label class="sr-only" for="qty[@rndm@][@SKU@]">[@model@] quantity field</label>
-				<input type="number" min="[@min_qty@]" class="form-control qty form-control-lg" id="qty[@rndm@][@SKU@]" name="qty" aria-label="[@model@] quantity field" value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]" size="2"/>
-			</div>
+			[%if [@misc20@] ne 'y'%]
+				<div class="mb-2">
+					<label class="sr-only" for="qty[@rndm@][@SKU@]">[@model@] quantity field</label>
+					<input type="number" min="[@min_qty@]" class="form-control qty form-control-lg" id="qty[@rndm@][@SKU@]" name="qty" aria-label="[@model@] quantity field" value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]" size="2"/>
+				</div>
+			[%/if%]
 			<div class="mb-2">
 				[%if [@misc20@] eq 'y'%]
-					<a class="notify_popup btn btn-outline-secondary btn-block btn-lg btn-loads award-addtocart" href="[@url@]" title="Contact Us" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Contact Us</a>
+					<a class="notify_popup btn btn-secondary btn-block btn-lg btn-loads award-addtocart" href="https://www.awardrv.com.au/contact-us" title="Contact Us" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Contact Us</a>
 				[%elseif [@available_preorder_quantity@] > 0 AND [@preorder@] AND [@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
 					<button type="button" title="Add [@model@] to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-ajax-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-clock icon-white" aria-hidden="true"></i> Pre-Order Now</button>
 				[%elseif [@store_quantity@] > 0 AND [@preorder@] AND ![@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
@@ -124,6 +126,8 @@
 					<button type="button" title="Add [@model@] to Cart" class="addtocart btn btn-primary btn-block btn-lg btn-ajax-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-shopping-cart icon-white" aria-hidden="true"></i> Order In</button>
 				[%elseif [@store_quantity@] > 0 AND ![@preorder@] %]
 					<button type="button" title="Add [@model@] to Cart" class="addtocart btn btn-primary btn-block btn-lg btn-ajax-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-shopping-cart icon-white" aria-hidden="true"></i> Add to Cart</button>
+				[%elseif [@store_quantity@] < 1 AND [@misc8@] eq 'y'%]
+					<a class="notify_popup btn btn-block btn-lg btn-loads btn-inactive" href="https://www.awardrv.com.au/contact-us" title="Contact Us" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Discontinued</a>
 				[%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
 					<button type="button" title="Add [@model@] to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-ajax-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-clock icon-white" aria-hidden="true"></i> Backorder</button>
 				[%else%]
@@ -131,7 +135,7 @@
 				[%/ if%]
 			</div>
 			<div class="mb-2">
-				[%if [@config:show_wishlist@]%]
+				[%if [@config:show_wishlist@] AND [@misc20@] ne 'y'%]
 					<div class="product-wishlist">
 						[%IN_WISHLIST id:'[@SKU@]' %]
 							[%param if_true%]
