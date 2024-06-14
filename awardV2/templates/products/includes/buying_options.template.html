@@ -123,11 +123,11 @@
 				[%elseif [@store_quantity@] > 0 AND [@preorder@] AND ![@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
 					<button type="button" title="Add [@model@] to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-ajax-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-clock icon-white" aria-hidden="true"></i> Pre-Order Now</button>
 				[%elseif [@misc2@] eq 'y'%]
-					<button type="button" title="Add [@model@] to Cart" class="addtocart btn btn-primary btn-block btn-lg btn-ajax-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-shopping-cart icon-white" aria-hidden="true"></i> Order In</button>
+					<button type="button" title="Add [@model@] to Cart" class="addtocart btn btn-primary btn-block btn-lg btn-ajax-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-shopping-cart icon-white" aria-hidden="true"></i> Order</button>
 				[%elseif [@store_quantity@] > 0 AND ![@preorder@] %]
 					<button type="button" title="Add [@model@] to Cart" class="addtocart btn btn-primary btn-block btn-lg btn-ajax-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-shopping-cart icon-white" aria-hidden="true"></i> Add to Cart</button>
 				[%elseif [@store_quantity@] < 1 AND [@misc8@] eq 'y'%]
-					<a class="notify_popup btn btn-block btn-lg btn-loads btn-inactive" href="https://www.awardrv.com.au/contact-us" title="Contact Us" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Discontinued</a>
+					<a class="notify_popup btn btn-block btn-lg btn-loads btn-inactive" href="https://www.awardrv.com.au/contact-us" title="Contact Us" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Unavailable</a>
 				[%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
 					<button type="button" title="Add [@model@] to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-ajax-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-clock icon-white" aria-hidden="true"></i> Backorder</button>
 				[%else%]
