@@ -156,6 +156,24 @@ $payment-icon:(
 	@extend .justify-content-sm-start;
 	@extend .align-items-start;
 }
+
+@media (max-width: 767px) {
+	.row [class*="col-"] {
+	  padding-left: 4px;
+	  padding-right: 4px;
+	  padding-bottom: 8px !important;
+	}
+
+	.row {
+		margin-right: -4px;
+		margin-left: -4px;
+	}
+
+	.card {
+		overflow: hidden !important;
+	}
+  }
+
 // Thumbnail
 .savings-container {
 	position: absolute;

@@ -1,6 +1,6 @@
 [%cache type:'gallery' id:'[@inventory_id@]'%]
 <article class="col-6 col-lg-4 col-xl-3 pb-3" role="article" aria-label="Product thumbnail">
-	<div class="card thumbnail card-body p-3 product-clamp-height" itemscope itemtype="http://schema.org/Product">
+	<div class="card thumbnail card-body p-xs-1 p-sm-3 product-clamp-height" itemscope itemtype="http://schema.org/Product">
 		<!-- <meta itemprop="brand" content="[@brand@]"/> -->
 		<meta itemprop="mpn" content="[@sku@]"/>
 		
@@ -44,7 +44,7 @@
 			<!-- Price -->
 			<p class="price price-listing" itemprop="offers" itemscope itemtype="http://schema.org/Offer" aria-label="[%escape%][@model@][%/escape%] price">
 				[%if [@inpromo@]%]
-					Now&nbsp;[%if [@has_child@]%]from&nbsp;[%/if%]
+					<!-- Now&nbsp;[%if [@has_child@]%]from&nbsp;[%/if%] -->
 					<meta itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]"/>
 					<span itemprop="price" content="[@promo_price@]">[%format type:'currency'%][@promo_price@][%/format%]</span>
 				[%else%]
