@@ -55,7 +55,7 @@
 					<div class="productrrp text-muted small" aria-label="RRP Price">
 						<s>RRP [%FORMAT type:'currency'%][@retail@][%/FORMAT%]</s>
 					</div>
-					<div class="productsave small" aria-label="Save Price">
+					<div class="productsave small mb-3" aria-label="Save Price">
 						SAVE [%format type:'currency'%][@save_price@][%/format%] ([%format type:'percent'%][@save@][%/format%])
 					</div>
 				[%/if%]
@@ -72,7 +72,7 @@
 					NOW [%FORMAT type:'currency'%][@promo_price@][%/FORMAT%]
 				</div>
 
-				<div class="rounded bg-sale p-2 text-white" style="width: max-content;">
+				<div class="rounded bg-sale p-2 text-white mb-3" style="width: max-content;">
 					[%if [@save@] > 0%]
 						<div class="productsave small" aria-label="Save Price"> 
 							SAVE [%format type:'percent'%][@save@][%/format%]
@@ -92,8 +92,6 @@
 			[%if [@form:disable_scripts@] ne 'true'%]
 			[%tracking_code type:'BuyingOptions' /%]
 			[%/if%]
-			
-
 
 			[%if [@availability_description@]%]
 				<div class="availability_description">
