@@ -35,13 +35,13 @@
 				[%/advert%]
 
 				<!-- Image Column -->
-				<section class="col-12 col-lg-7 pr-5 award-product-image" role="contentinfo" aria-label="Product images">
+				<section class="col-12 col-lg-7 pr-md-5 award-product-image" role="contentinfo" aria-label="Product images">
 					<!-- images template -->
 					[%load_ajax_template id:'_images' type:'item' template:'images' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 				</section>
 
 				<!-- Product Column -->
-				<section class="col-12 col-lg-5 pl-3" role="contentinfo" aria-label="Products information">
+				<section class="col-12 col-lg-5 pl-md-3" role="contentinfo" aria-label="Products information">
 					
 					[%if [@user:group_id@] eq '7'%]
 						<div class="mb-3"><a href="https://www.awardrv.com.au/_cpanel/products/view?id=[@inventory_id@]" target="_blank" rel="noopener noreferrer">STAFF: EDIT IN CONTROL PANEL</a></div>
@@ -114,7 +114,8 @@
 
 						<div class="col-12">
 							<!-- product_information template -->
-							[%load_template file:"products/includes/product_information.template.html"/%]
+							[%load_ajax_template id:'_imagesTab' type:'item' template:'product_information' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+
 							[%if [@form:disable_scripts@] ne 'true'%][%tracking_code type:'ProductDescription' /%][%/if%]
 							<hr aria-hidden="true"/>
 						</div>

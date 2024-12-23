@@ -61,7 +61,7 @@
 				</button>
 				
 				<div id="accordionDescription" class="collapse show" aria-labelledby="headingDescription">
-					<div class="card-body p-md-0">
+					<div class="card-body p-2 p-md-0">
 						<section class="productdetails n-responsive-content" aria-label="Product Description">
 							[@description@]
 						</section>
@@ -110,6 +110,39 @@
 				</div>
 			</div>
 		[%/if%]
+
+		<div class="d-block d-md-none" id="gallery" role="tabpanel" aria-labelledby="tabGallery">
+			<div class="award-card">
+				<button class="btn btn-primary btn-block text-left" id="headingGallery" type="button" data-toggle="collapse" data-target="#accordionGallery" aria-expanded="true" aria-controls="accordionGallery">
+					<h5 class="mb-0">
+						Gallery
+						<i class="fa fa-chevron-down icon-white award-dropdown" aria-hidden="true"></i>
+					</h5>
+				</button>
+
+				<div id="accordionGallery" class="collapse show" aria-labelledby="headingGallery">
+					<div class="card-body p-0">
+						<div class="n-responsive-content row align-items-center">
+							[%THUMBNAILS id:'[@SKU@]' check_parent:'y'%]
+								[%param *body%]
+									<div class="col-6 col-md-3 mb-3">
+										<a href="[@full_image@]" data-lightbox="product-lightbox" data-title="Product image" rel="product_images">
+											<img src="[@thumb_image@]" class="img-fluid product-image-small">
+										</a>
+									</div>
+								[%/ param%]
+								[%param *brochure%]
+									<div class="col-6 col-md-3 mb-3">
+										<a class="display-4" href="[@file@]" target="_blank" rel="noopener"><i class="far fa-file-pdf"></i></a>
+									</div>
+								[%/ param%]
+							[%/ THUMBNAILS%]
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="" id="specifications" role="tabpanel" aria-labelledby="tabSpecifications">
 			<div class="award-card">
 				<button class="btn btn-primary btn-block text-left" id="headingSpecifications" type="button" data-toggle="collapse" data-target="#accordionSpecifications" aria-expanded="true" aria-controls="accordionSpecifications">
