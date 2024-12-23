@@ -63,6 +63,21 @@
 		[%/advert%]
 	</div>
 
+	<div class="h-home my-5">SHOP <span>POPULAR</span> CATEGORIES</div>
+	[%advert type:'text' category:'0' ad_group:'home-popular-categories' template:'autobanner' limit:'8'%]
+		[%param *header%]
+			<div class="row row-cols-2 row-cols-md-4 mb-3">
+		[%/param%]
+		[%param *body%] 
+				<div class="col mb-3" >
+					<a href="[@url@]"><img class="award-banner" style="height: auto; width: 100%;" src="[%asset_url type:'adw' id:'[@ad_id@]' default:'[@config:ASSETS_URL@]/pixel.gif'%][%END asset_url%]" alt="[@headline@]"></a>
+				</div>
+		[%/param%]
+		[%param *footer%]
+			</div>
+		[%/param%]
+	[%/advert%]
+
 	<div class="h-home my-5">OUR <span>NEW</span> ARRIVALS</div>
 	
 	<div class="mb-3">
@@ -80,21 +95,6 @@
 	<div class="d-flex">
 		<a class="btn btn-primary mx-auto" href="https://www.awardrv.com.au/new-arrivals/" role="button">See All New Arrivals <i class="fa fa-chevron-right ml-1"></i></a>
 	</div>
-
-	<div class="h-home my-5">SHOP <span>POPULAR</span> CATEGORIES</div>
-	[%advert type:'text' category:'0' ad_group:'home-popular-categories' template:'autobanner' limit:'4'%]
-		[%param *header%]
-			<div class="row row-cols-2 row-cols-md-4 mb-3">
-		[%/param%]
-		[%param *body%] 
-				<div class="col mb-3 mb-md-0" >
-					<a href="[@url@]"><img class="award-banner" style="height: auto; width: 100%;" src="[%asset_url type:'adw' id:'[@ad_id@]' default:'[@config:ASSETS_URL@]/pixel.gif'%][%END asset_url%]" alt="[@headline@]"></a>
-				</div>
-		[%/param%]
-		[%param *footer%]
-			</div>
-		[%/param%]
-	[%/advert%]
 
 	<div class="h-home my-5">SHOP <span>POPULAR</span> PRODUCTS</div>
 	<div class="row mb-3">

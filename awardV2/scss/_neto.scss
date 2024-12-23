@@ -157,6 +157,7 @@ $payment-icon:(
 	@extend .align-items-start;
 }
 
+// This manually fixes the mobile gutter issue
 @media (max-width: 767px) {
 	.row [class*="col-"] {
 	  padding-left: 4px;
