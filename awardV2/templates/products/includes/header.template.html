@@ -10,13 +10,13 @@
 		[%elseif [@store_quantity@] > 0 AND [@preorder@] AND ![@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
 			<span itemprop="availability" content="http://schema.org/PreOrder" class="badge badge-warning mb-1">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</span>
 		[%elseif [@misc2@] eq 'y'%]
-			<span itemprop="availability" content="http://schema.org/BackOrder" class="badge badge-success mb-1">[%if [@misc3@] ne ''%] [@misc3@][%else%] Special Order[%/if%]</span>
+			<span itemprop="availability" content="http://schema.org/InStock" class="badge badge-success mb-1">[%if [@misc3@] ne ''%] [@misc3@][%else%] Special Order[%/if%]</span>
 		[%elseif [@store_quantity@] > 0 AND ![@preorder@] %]
 			<span itemprop="availability" content="http://schema.org/InStock" class="badge badge-success mb-1">In Stock</span>
 		[%elseif [@store_quantity@] < 1 AND [@misc8@] eq 'y' %]
 			<span itemprop="availability" content="http://schema.org/OutOfStock" class="badge btn-inactive mb-1">Unavailable</span>
 		[%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
-			<span itemprop="availability" content="http://schema.org/LimitedAvailability" class="badge badge-danger mb-1">Sold Out - Backorder Available</span>
+			<span itemprop="availability" content="http://schema.org/OutOfStock" class="badge badge-danger mb-1">Sold Out - Backorder Available</span>
 		[%else%]
 			<span itemprop="availability" content="http://schema.org/OutOfStock" class="badge badge-danger mb-1">Sold Out</span>
 		[%/if%]
